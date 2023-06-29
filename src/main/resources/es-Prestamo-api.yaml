@@ -1,0 +1,647 @@
+openapi: 3.0.1
+servers:
+  - description: Index swagger
+    #url local
+    -url: https://localhost:8080
+    #url produccion
+    url: https://api.mibanco.com.co
+info:
+  description: Servicios de entidad gestion de prestamos.
+  version: 0.0.1
+  title: Prestamos_ES
+  contact:
+    name: MiBanco
+    url: https://www.mibanco.com.co/
+    email: api@mibanco.com.co
+  license:
+    name: GNU GPLv3
+    url: ‘https://www.gnu.org/licenses/gpl-3.0.html’
+tags:
+  - name: Prestamos
+    description: Gestion de prestamos
+#----------------------------
+#Endpoints del Entidad
+#----------------------------
+paths:
+  /v1/es/Cliente/prestamo/{numeroCliente}:
+    get:
+      summary: Consulta prestamo
+      operationId: consultarPrestamo
+      parameters:
+        - in: path
+          name: numeroCliente
+          required: true
+          schema:
+            type: integer
+          description: numero de cliente
+      responses:
+        "200":
+          description: get prestamo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PrestamoType"
+        "400":
+          description: Peticion con datos invalidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: "No se encontro datos de prestamo"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/es/Cliente/prestamoCondonado/{numeroPrestamo}:
+    get:
+      summary: Consulta prestamo condonado
+      operationId: consultarPrestamoCondonado
+      parameters:
+        - in: path
+          name: numeroPrestamo
+          required: true
+          schema:
+            type: integer
+          description: numero de cliente
+      responses:
+        "200":
+          description: get prestamo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PrestamoCondonadoType"
+        "400":
+          description: Peticion con datos invalidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: "No se encontro datos de prestamo"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/es/Cliente/PrestamoDetallePagos/{numeroPrestamo}:
+    get:
+      summary: Consulta detalle pagos
+      operationId: PrestamoDetallePagos
+      parameters:
+        - in: path
+          name: numeroPrestamo
+          required: true
+          schema:
+            type: integer
+          description: numero de cliente
+      responses:
+        "200":
+          description: get prestamo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PrestamoDetallePagosType"
+        "400":
+          description: Peticion con datos invalidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: "No se encontro datos de prestamo"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/es/Cliente/prestamoGarantia/{numeroPrestamo}:
+    get:
+      summary: Consulta prestamo garantia
+      operationId: consultarPrestamoGarantia
+      parameters:
+        - in: path
+          name: numeroPrestamo
+          required: true
+          schema:
+            type: integer
+          description: numero de cliente
+      responses:
+        "200":
+          description: get prestamo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PrestamoGarantiaType"
+        "400":
+          description: Peticion con datos invalidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: "No se encontro datos de prestamo"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/es/Cliente/prestamoOtroTitular/{numeroPrestamo}:
+    get:
+      summary: Consulta prestamo otro titular
+      operationId: consultarPrestamoOtroTitular
+      parameters:
+        - in: path
+          name: numeroPrestamo
+          required: true
+          schema:
+            type: integer
+          description: numero de cliente
+      responses:
+        "200":
+          description: get prestamo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PrestamoOtroTitularType"
+        "400":
+          description: Peticion con datos invalidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: "No se encontro datos de prestamo"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/es/Cliente/PrestamoPlanDePagos/{numeroPrestamo}:
+    get:
+      summary: Consulta prestamo plan de pagos
+      operationId: consultarPrestamoPlanDePagos
+      parameters:
+        - in: path
+          name: numeroPrestamo
+          required: true
+          schema:
+            type: integer
+          description: numero de cliente
+      responses:
+        "200":
+          description: get prestamo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PrestamoPlanDePagosType"
+        "400":
+          description: Peticion con datos invalidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: "No se encontro datos de prestamo"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/es/Cliente/PrestamoPlanDePagosOtroCargo/{numeroPrestamo}/{numeroCuota}:
+    get:
+      summary: Consulta prestamo plan de pagos otro cargo
+      operationId: consultarPrestamoPlanDePagosOtroCargo
+      parameters:
+        - in: path
+          name: numeroPrestamo
+          required: true
+          schema:
+            type: integer
+          description: numero de prestamo
+        - in: path
+          name: numeroCuota
+          required: true
+          schema:
+            type: integer
+          description: numero de cuotas
+      responses:
+        "200":
+          description: get prestamo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PrestamoPlanDePagosOtroCargoType"
+        "400":
+          description: Peticion con datos invalidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: "No se encontro datos de prestamo"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/es/Cliente/prestamoPorPagar/{numeroPrestamo}:
+    get:
+      summary: Consulta prestamo por pagar
+      operationId: consultarPrestamoPorPagar
+      parameters:
+        - in: path
+          name: numeroPrestamo
+          required: true
+          schema:
+            type: integer
+          description: numero de prestamo
+      responses:
+        "200":
+          description: get prestamo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PrestamoPorPagarType"
+        "400":
+          description: Peticion con datos invalidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: "No se encontro datos de prestamo"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+
+#---------------------------------------------
+#Se declaran los Modelos/Schemas del servicio
+#---------------------------------------------
+
+components:
+  schemas:
+    #    TYPES
+    PrestamoType:
+      type: object
+      properties:
+        condicionPrestamo:
+          type: string
+        diasMoraActual:
+          type: integer
+        diasMoraMaxima:
+          type: integer
+        diasMoraPromedio:
+          type: integer
+        estadoActualPrestamo:
+          type: string
+        fechaDesembolso:
+          type: Date
+        fechaUltimoPago:
+          type: Date
+        montoDesembolsado:
+          type: float
+        numeroCliente:
+          type: integer
+        numeroPrestamo:
+          type: string
+        plazo:
+          type: integer
+        prestamoCondonado:
+          type: string
+        #          $ref: "#/components/schemas/PrestamoCondonadoType" //Modeling incompleto
+        prestamoDetallePagos:
+          type: string
+        #          $ref: "#/components/schemas/PrestamoDetallePagosType" //Modeling incompleto
+        prestamoGarantia:
+          type: string
+        #          $ref: "#/components/schemas/PrestamoGarantiaType" //Modeling incompleto
+        prestamoOtroTitular:
+          type: string
+        #          $ref: "#/components/schemas/PrestamoOtroTitularType" //Modeling incompleto
+        prestamoPlanDePagos:
+          type: string
+        #          $ref: "#/components/schemas/PrestamoPlanDePagosType" //Modeling incompleto
+        prestamoPorPagar:
+          type: string
+        #          $ref: "#/components/schemas/PrestamoPorPagarType" //Modeling incompleto
+        saldoActual:
+          type: float
+        subProducto:
+          $ref: "#/components/schemas/SubProductoEnum"
+    PrestamoCondonadoType:
+      type: object
+      properties:
+        abonoACapital:
+          type: float
+        comisiónComisiónIVA:
+          type: float
+        diasVencidos:
+          type: integer
+        estado:
+          type: string
+        fechaAPagar:
+          type: Date
+        fechaPago:
+          type: Date
+        GACGACIVA:
+          type: float
+        gastoExtraDiferidoGastoExtraDiferidoIVA:
+          type: float
+        gastoExtraJudicialGastoExtraJudicialIVA:
+          type: float
+        interesesCteBalance:
+          type: float
+        InteresesCteContingente:
+          type: float
+        interesesMoraBalance:
+          type: float
+        interesesMoraContingente:
+          type: float
+        leyMipymeLeyMipymeIVA:
+          type: float
+        numeroCuota:
+          type: integer
+        numeroPrestamo:
+          type: string
+        otrosGastos:
+          type: float
+        otrosGastosIVA:
+          type: float
+        seguroAdicional:
+          type: float
+        seguroVida:
+          type: float
+        totalCuota:
+          type: float
+    PrestamoDetallePagosType:
+      type: object
+      properties:
+        fechaPago:
+          type: Date
+        valorPagado:
+          type: float
+        abonoACapital:
+          type: float
+        interesesCorrientes:
+          type: float
+        interesesMora:
+          type: float
+        seguroVida:
+          type: float
+        leyMipyme:
+          type: float
+        leyMipymeIVA:
+          type: float
+        cargoCobranza:
+          type: float
+        cobranzaIVA:
+          type: float
+        otros:
+          type: float
+        numeroPrestamo:
+          type: string
+    PrestamoGarantiaType:
+      type: object
+      properties:
+        tipoGarantia:
+          $ref: "#/components/schemas/TipoGarantiaEnum"
+        SubtipoGarantia:
+          type: string
+        avaluo:
+          type: float
+        referencia:
+          type: string
+        numeroPrestamo:
+          type: string
+    PrestamoOtroTitularType:
+      type: object
+      properties:
+        tipoDocumento:
+          $ref: "#/components/schemas/TipoDocumentoEnum"
+        numeroDocumento:
+          type: string
+        primerNombre:
+          type: string
+        segundoNombre:
+          type: string
+        primerApellido:
+          type: string
+        segundoApellido:
+          type: string
+        tipoTitular:
+          $ref: "#/components/schemas/TipoTitularEnum"
+        numeroPrestamo:
+          type: string
+    PrestamoPlanDePagosType:
+      type: object
+      properties:
+        numeroCuota:
+          type: integer
+        fechaAPagar:
+          type: Date
+        abonoACapital:
+          type: float
+        intereses:
+          type: float
+        otrosCargos:
+          type: float
+        totalCuota:
+          type: float
+        saldo:
+          type: float
+        estado:
+          type: string
+        diasVencidos:
+          type: integer
+        fechaPago:
+          type: Date
+        montoPagado:
+          type: float
+        prestamoPlanDePagosOtroCargo:
+          type: string
+        #        $ref: '#/components/schemas/ListPrestamoPlanDePagosOtroCargoType' // sin data en  modeling
+        numeroPrestamo:
+          type: string
+    PrestamoPlanDePagosOtroCargoType:
+      type: object
+      properties:
+        descripcionCargo:
+          type: string
+        valor:
+          type: float
+        numeroPrestamo:
+          type: string
+        numeroCuota:
+          type: integer
+    PrestamoPorPagarType:
+      type: object
+      properties:
+        numeroCuota:
+          type: integer
+        fechaAPagar:
+          type: Date
+        abonoACapital:
+          type: float
+        interesesCteBalance:
+          type: float
+        interesesCteContingente:
+          type: float
+        interesesMoraBalance:
+          type: float
+        interesesMoraContingente:
+          type: float
+        seguroVida:
+          type: float
+        seguroAdicional:
+          type: float
+        leyMipymeLeyMipymeIVA:
+          type: float
+        comisiónComisiónIVA:
+          type: float
+        GACGACIVA:
+          type: float
+        gastoExtraJudicialGastoExtraJudicialIVA:
+          type: float
+        gastoExtraDiferidoGastoExtraDiferidoIVA:
+          type: float
+        totalCuota:
+          type: float
+        estado:
+          type: string
+        fechaPago:
+          type: Date
+        diasVencidos:
+          type: integer
+        numeroPrestamo:
+          type: string
+
+    #    ENUMERADORES
+    TipoDocumentoEnum:
+      type: string
+      enum:
+        - CC
+        - TI
+        - CDI
+        - CE
+        - CPA
+        - NIT
+        - PAS
+        - RCN
+        - RUT
+        - TE
+        - RUMC
+    SubProductoEnum:
+      type: string
+      enum:
+        - REMA AAFC APORTES AFC - CENTRALIZADO
+        - REMA AARL APORTES ARL - CENTRALIZADO
+        - REMC ABOG ANTICIPO ABOGADOS - CENTRALIZADO
+        - REMA AFP AFP PENSIONES - CENTRALIZADO
+        - REMC ANTC ANTICIPOS LABORALES - CENTRALIZADO
+        - GRFG ASDI GARANTIA ASDI
+        - REMC AUTO FALTANTE EN CAJERO AUTOMATICO - OFICINAS
+        - REMA BDEG SEGURO BIENES DADOS EN GRTIA  - CENTRALIZADO
+        - BONO BN01 BONO < 18 MESES DTF
+        - BONO BN02 BONO > 18 MESES DTF
+        - BONO BN03 BONO < 18 MESES IBR
+    TipoGarantiaEnum:
+      type: string
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - A
+        - B
+        - C
+        - D
+        - E
+        - F
+        - G
+        - H
+        - I
+        - J
+        - K
+        - L
+        - M
+        - N
+        - O
+        - P
+        - Q
+        - R
+        - S
+        - T
+        - U
+        - V
+        - W
+        - X
+        - Y
+        - Z
+    TipoTitularEnum:
+      type: string
+      enum:
+        - SINDATAMODELING
+
+        #   ERRORES
+    Error:
+      type: object
+      properties:
+        status:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "The request is invalid."
+      required:
+        - status
+        - message
+
+  responses:
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
