@@ -94,7 +94,7 @@ paths:
   /v1/es/Cliente/PrestamoDetallePagos/{numeroPrestamo}:
     get:
       summary: Consulta detalle pagos
-      operationId: PrestamoDetallePagosEntity
+      operationId: PrestamoDetallePagos
       parameters:
         - in: path
           name: numeroPrestamo

@@ -7,6 +7,7 @@ import com.mibanco.prestamo.es.services.contract.PrestamoService;
 import com.mibanco.prestamo.es.utils.mappers.PrestamoMapper;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,6 +26,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     PrestamoMapper mapper;
 
     @Override
+    @Transactional
     public List<PrestamoType> consultarPrestamo(Integer numeroCliente) {
         LOG.info("Inicia consulta de Prestamo");
         List<PrestamoEntity> list = prestamoDao.consultarPrestamo(numeroCliente);
@@ -34,6 +36,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     }
 
     @Override
+    @Transactional
     public List<PrestamoCondonadoType> consultarPrestamoCondonado(Integer numeroCliente) {
         LOG.info("Inicia consulta de Prestamo Condonado");
         List<PrestamoCondonadoEntity> list = prestamoDao.consultarPrestamoCondonado(numeroCliente);
@@ -43,6 +46,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     }
 
     @Override
+    @Transactional
     public List<PrestamoDetallePagosType> consultarPrestamoDetallePagos(Integer numeroCliente) {
         LOG.info("Inicia consulta de Prestamo Detalle Pagos");
         List<PrestamoDetallePagosEntity> list = prestamoDao.consultarPrestamoDetallePagos(numeroCliente);
@@ -52,6 +56,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     }
 
     @Override
+    @Transactional
     public List<PrestamoGarantiaType> consultarPrestamoGarantiaOutput(Integer numeroCliente) {
         LOG.info("Inicia consulta de Prestamo garantias");
         List<PrestamoGarantiaEntity> list = prestamoDao.consultarPrestamoGarantiaOutput(numeroCliente);
@@ -61,6 +66,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     }
 
     @Override
+    @Transactional
     public List<PrestamoOtroTitularType> consultarPrestamoOtroTitular(Integer numeroCliente) {
         LOG.info("Inicia consulta de Prestamo otro titular");
         List<PrestamoOtroTitularEntity> list = prestamoDao.consultarPrestamoOtroTitular(numeroCliente);
@@ -70,6 +76,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     }
 
     @Override
+    @Transactional
     public List<PrestamoPlanDePagosType> consultarPrestamoPlanDePagos(Integer numeroCliente) {
         LOG.info("Inicia consulta de Prestamo plan de pagos");
         List<PrestamoPlanDePagosEntity> list = prestamoDao.consultarPrestamoPlanDePagos(numeroCliente);
@@ -79,6 +86,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     }
 
     @Override
+    @Transactional
     public List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente) {
         LOG.info("Inicia consulta de Prestamo plan de pagos otro cargo");
         List<PrestamoPlanDePagosOtroCargoEntity> list = prestamoDao.consultarPrestamoPlanDePagosOtroCargo(numeroCliente);
@@ -88,6 +96,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     }
 
     @Override
+    @Transactional
     public List<PrestamoPorPagarType> consultarPrestamoPorPagar(Integer numeroCliente) {
         LOG.info("Inicia consulta de Prestamo por pagar");
         List<PrestamoPorPagarEntity> list = prestamoDao.consultarPrestamoPorPagar(numeroCliente);
