@@ -13,10 +13,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoCondonadoType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-10T16:52:07.266518600-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-15T17:12:32.457853-05:00[America/Bogota]")
 public class PrestamoCondonadoType   {
   private @Valid Float abonoACapital = null;
-  private @Valid Float comisiónComisiónIVA = null;
+  private @Valid Float comisionComisionIVA = null;
   private @Valid Integer diasVencidos;
   private @Valid String estado;
   private @Valid Date fechaAPagar = null;
@@ -56,24 +56,26 @@ public class PrestamoCondonadoType   {
   }
 
   /**
+   *
    **/
-  public PrestamoCondonadoType comisiónComisiónIVA(Float comisiónComisiónIVA) {
-    this.comisiónComisiónIVA = comisiónComisiónIVA;
+  public PrestamoCondonadoType comisionComisionIVA(Float comisionComisionIVA) {
+    this.comisionComisionIVA = comisionComisionIVA;
     return this;
   }
 
-  
-  @JsonProperty("comisiónComisiónIVA")
-  public Float getComisiónComisiónIVA() {
-    return comisiónComisiónIVA;
+
+  @JsonProperty("comisionComisionIVA")
+  public Float getComisionComisionIVA() {
+    return comisionComisionIVA;
   }
 
-  @JsonProperty("comisiónComisiónIVA")
-  public void setComisiónComisiónIVA(Float comisiónComisiónIVA) {
-    this.comisiónComisiónIVA = comisiónComisiónIVA;
+  @JsonProperty("comisionComisionIVA")
+  public void setComisionComisionIVA(Float comisionComisionIVA) {
+    this.comisionComisionIVA = comisionComisionIVA;
   }
 
   /**
+   *
    **/
   public PrestamoCondonadoType diasVencidos(Integer diasVencidos) {
     this.diasVencidos = diasVencidos;
@@ -426,17 +428,17 @@ public class PrestamoCondonadoType   {
     }
     PrestamoCondonadoType prestamoCondonadoType = (PrestamoCondonadoType) o;
     return Objects.equals(this.abonoACapital, prestamoCondonadoType.abonoACapital) &&
-        Objects.equals(this.comisiónComisiónIVA, prestamoCondonadoType.comisiónComisiónIVA) &&
-        Objects.equals(this.diasVencidos, prestamoCondonadoType.diasVencidos) &&
-        Objects.equals(this.estado, prestamoCondonadoType.estado) &&
-        Objects.equals(this.fechaAPagar, prestamoCondonadoType.fechaAPagar) &&
-        Objects.equals(this.fechaPago, prestamoCondonadoType.fechaPago) &&
-        Objects.equals(this.GACGACIVA, prestamoCondonadoType.GACGACIVA) &&
-        Objects.equals(this.gastoExtraDiferidoGastoExtraDiferidoIVA, prestamoCondonadoType.gastoExtraDiferidoGastoExtraDiferidoIVA) &&
-        Objects.equals(this.gastoExtraJudicialGastoExtraJudicialIVA, prestamoCondonadoType.gastoExtraJudicialGastoExtraJudicialIVA) &&
-        Objects.equals(this.interesesCteBalance, prestamoCondonadoType.interesesCteBalance) &&
-        Objects.equals(this.interesesCteContingente, prestamoCondonadoType.interesesCteContingente) &&
-        Objects.equals(this.interesesMoraBalance, prestamoCondonadoType.interesesMoraBalance) &&
+            Objects.equals(this.comisionComisionIVA, prestamoCondonadoType.comisionComisionIVA) &&
+            Objects.equals(this.diasVencidos, prestamoCondonadoType.diasVencidos) &&
+            Objects.equals(this.estado, prestamoCondonadoType.estado) &&
+            Objects.equals(this.fechaAPagar, prestamoCondonadoType.fechaAPagar) &&
+            Objects.equals(this.fechaPago, prestamoCondonadoType.fechaPago) &&
+            Objects.equals(this.GACGACIVA, prestamoCondonadoType.GACGACIVA) &&
+            Objects.equals(this.gastoExtraDiferidoGastoExtraDiferidoIVA, prestamoCondonadoType.gastoExtraDiferidoGastoExtraDiferidoIVA) &&
+            Objects.equals(this.gastoExtraJudicialGastoExtraJudicialIVA, prestamoCondonadoType.gastoExtraJudicialGastoExtraJudicialIVA) &&
+            Objects.equals(this.interesesCteBalance, prestamoCondonadoType.interesesCteBalance) &&
+            Objects.equals(this.interesesCteContingente, prestamoCondonadoType.interesesCteContingente) &&
+            Objects.equals(this.interesesMoraBalance, prestamoCondonadoType.interesesMoraBalance) &&
         Objects.equals(this.interesesMoraContingente, prestamoCondonadoType.interesesMoraContingente) &&
         Objects.equals(this.leyMipymeLeyMipymeIVA, prestamoCondonadoType.leyMipymeLeyMipymeIVA) &&
         Objects.equals(this.numeroCuota, prestamoCondonadoType.numeroCuota) &&
@@ -450,16 +452,16 @@ public class PrestamoCondonadoType   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(abonoACapital, comisiónComisiónIVA, diasVencidos, estado, fechaAPagar, fechaPago, GACGACIVA, gastoExtraDiferidoGastoExtraDiferidoIVA, gastoExtraJudicialGastoExtraJudicialIVA, interesesCteBalance, interesesCteContingente, interesesMoraBalance, interesesMoraContingente, leyMipymeLeyMipymeIVA, numeroCuota, numeroPrestamo, otrosGastos, otrosGastosIVA, seguroAdicional, seguroVida, totalCuota);
+    return Objects.hash(abonoACapital, comisionComisionIVA, diasVencidos, estado, fechaAPagar, fechaPago, GACGACIVA, gastoExtraDiferidoGastoExtraDiferidoIVA, gastoExtraJudicialGastoExtraJudicialIVA, interesesCteBalance, interesesCteContingente, interesesMoraBalance, interesesMoraContingente, leyMipymeLeyMipymeIVA, numeroCuota, numeroPrestamo, otrosGastos, otrosGastosIVA, seguroAdicional, seguroVida, totalCuota);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrestamoCondonadoType {\n");
-    
+
     sb.append("    abonoACapital: ").append(toIndentedString(abonoACapital)).append("\n");
-    sb.append("    comisiónComisiónIVA: ").append(toIndentedString(comisiónComisiónIVA)).append("\n");
+    sb.append("    comisionComisionIVA: ").append(toIndentedString(comisionComisionIVA)).append("\n");
     sb.append("    diasVencidos: ").append(toIndentedString(diasVencidos)).append("\n");
     sb.append("    estado: ").append(toIndentedString(estado)).append("\n");
     sb.append("    fechaAPagar: ").append(toIndentedString(fechaAPagar)).append("\n");

@@ -363,7 +363,7 @@ components:
       properties:
         abonoACapital:
           type: float
-        comisiónComisiónIVA:
+        comisionComisionIVA:
           type: float
         diasVencidos:
           type: integer
@@ -526,7 +526,7 @@ components:
           type: float
         leyMipymeLeyMipymeIVA:
           type: float
-        comisiónComisiónIVA:
+        comisionComisionIVA:
           type: float
         GACGACIVA:
           type: float

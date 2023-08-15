@@ -1,0 +1,198 @@
+syntax = "proto3";
+
+//Configs
+
+option java_multiple_files = true;
+option java_package = "com.mibanco.prestamo.es";
+option java_outer_classname = "PrestamoGRPC";
+
+package PrestamoGRPC;
+
+message Prestamo {
+  string condicionPrestamo = 1;
+  int32  diasMoraActual = 2;
+  int32  diasMoraMaxima = 3;
+  int32  diasMoraPromedio = 4;
+  string estadoActualPrestamo = 5;
+  string fechaDesembolso = 6 ;
+  string fechaUltimoPago = 7;
+  float  montoDesembolsado = 8;
+  int32  numeroCliente = 9;
+  string numeroPrestamo = 10;
+  int32  plazo = 11;
+  string prestamoCondonado = 12;
+  string prestamoDetallePagos = 13;
+  string prestamoGarantia = 14;
+  string prestamoOtroTitular = 15;
+  string prestamoPlanDePagos = 16;
+  string prestamoPorPagar = 17;
+  float  saldoActual = 18;
+  string subProducto = 19;
+}
+
+message PrestamoPorPagar {
+  int32 numeroCuota = 1;
+  string fechaAPagar = 2;
+  float abonoACapital = 3;
+  float interesesCteBalance = 4;
+  float interesesCteContingente = 5;
+  float interesesMoraBalance = 6;
+  float interesesMoraContingente = 7;
+  float seguroVida = 8;
+  float seguroAdicional = 9;
+  float leyMipymeLeyMipymeIVA = 10;
+  float comisionComisionIVA = 11;
+  float GACGACIVA = 12;
+  float gastoExtraJudicialGastoExtraJudicialIVA = 13;
+  float gastoExtraDiferidoGastoExtraDiferidoIVA = 14;
+  float totalCuota = 15;
+  string estado = 16;
+  string fechaPago = 17;
+  int32 diasVencidos = 18;
+  string numeroPrestamo = 19;
+
+}
+
+message PrestamoPlanDePagos{
+  int32 numeroCuota = 1;
+  string fechaAPagar = 2;
+  float abonoACapital = 3;
+  float intereses = 4;
+  float otrosCargos = 5;
+  float totalCuota = 6;
+  float saldo = 7;
+  string estado = 8;
+  int32 diasVencidos = 9;
+  string fechaPago = 10;
+  float montoPagado = 11;
+  string prestamoPlanDePagosOtroCargo = 12;
+  string numeroPrestamo = 13;
+
+}
+
+message PrestamoPlanDePagosOtroCargo{
+  string descripcionCargo = 1;
+  float valor = 2;
+  string numeroPrestamo = 3;
+  int32 numeroCuota = 4;
+}
+
+message  PrestamoOtroTitular{
+  string tipoDocumento = 1;
+  string numeroDocumento = 2;
+  string primerNombre = 3;
+  string segundoNombre = 4;
+  string primerApellido = 5;
+  string segundoApellido = 6;
+  string tipoTitular = 7;
+  string numeroPrestamo = 8;
+}
+
+message PrestamoGarantia{
+  string tipoGarantia = 1;
+  string subtipoGarantia = 2;
+  float avaluo = 3;
+  string referencia = 4;
+  string numeroPrestamo = 5;
+}
+
+message PrestamoDeatellePagos{
+  string fechaPago = 1;
+  float valorPagado = 2;
+  float abonoACapital = 3;
+  float interesesCorrientes = 4;
+  float interesesMora = 5;
+  float seguroVida = 6;
+  float leyMipyme = 7;
+  float leyMipymeIVA = 8;
+  float cargoCobranza = 9;
+  float cobranzaIVA = 10;
+  float otros = 11;
+  string numeroPrestamo = 12;
+
+}
+
+message PrestamoCondonado{
+  float abonoACapital = 1;
+  float comisionComisionIVA = 2;
+  int32 diasVencidos = 3;
+  string estado = 4;
+  string fechaAPagar = 5;
+  string fechaPago = 6;
+  float GACGACIVA = 7;
+  float gastoExtraDiferidoGastoExtraDiferidoIVA = 8;
+  float gastoExtraJudicialGastoExtraJudicialIVA = 9;
+  float interesesCteBalance = 10;
+  float interesesCteContingente = 11;
+  float interesesMoraBalance = 12;
+  float interesesMoraContingente = 13;
+  float leyMipymeLeyMipymeIVA = 14;
+  int32 numeroCuota = 15;
+  string numeroPrestamo = 16;
+  float otrosGastos = 17;
+  float otrosGastosIVA = 18;
+  float seguroAdicional = 19;
+  float seguroVida = 20;
+  float totalCuota = 21;
+}
+
+message ResponsePrestamo{
+  repeated Prestamo obj = 1;
+}
+
+message ResponsePrestamoPorPagar{
+  repeated PrestamoPorPagar obj = 1;
+}
+
+message ResponsePrestamoPlandeDePagos{
+  repeated PrestamoPlanDePagos obj = 1;
+}
+
+message ResponsePrestamoPlanDePagosOtroCargo{
+  repeated PrestamoPlanDePagosOtroCargo obj = 1;
+}
+
+message ResponsePrestamoPlanDePagosOtroTitular{
+  repeated PrestamoOtroTitular obj = 1;
+}
+
+message ResponsePrestamoGarantia{
+  repeated PrestamoGarantia obj = 1;
+}
+
+message ResponsePrestamoDetallePagos{
+  repeated PrestamoDeatellePagos obj = 1;
+}
+
+message ResponsePrestamoCondonado{
+  repeated PrestamoCondonado obj = 1;
+}
+
+message QueryPrestamo{
+  string numeroPrestamo = 1;
+}
+
+message QueryPrestamoCuota{
+  string numeroPrestamo = 1;
+  int32 numeroCuota = 2;
+}
+
+message QueryCliente{
+  string numeroCliente = 1;
+}
+
+
+service PrestamoServiceGrpc {
+  rpc consultarPrestamo(QueryCliente) returns (ResponsePrestamo);
+  rpc consultarPrestamoPorPagar(QueryPrestamo) returns (ResponsePrestamoPorPagar);
+  rpc consultarPrestamoPlanDePagosOtroCargo(QueryPrestamoCuota) returns (ResponsePrestamoPlanDePagosOtroCargo);
+  rpc consultarPrestamoPlanDePagos(QueryPrestamo) returns (ResponsePrestamoPlandeDePagos);
+  rpc consultarPrestamoOtroTitular(QueryPrestamo) returns (ResponsePrestamoPlanDePagosOtroTitular);
+  rpc consultarPrestamoGarantia(QueryPrestamo) returns (ResponsePrestamoGarantia);
+  rpc consultarPrestamoDetallePagos(QueryPrestamo) returns (ResponsePrestamoDetallePagos);
+  rpc consultarPrestamoCondonado(QueryPrestamo) returns (ResponsePrestamoCondonado);
+}
+
+
+
+

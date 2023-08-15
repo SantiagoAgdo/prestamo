@@ -1,7 +1,9 @@
 package com.mibanco.prestamo.es.utils.validator;
 
+import com.mibanco.prestamo.es.QueryPrestamo;
 import com.mibanco.prestamo.es.constans.Constans;
 import com.mibanco.prestamo.es.gen.type.PrestamoType;
+import com.mibanco.prestamo.es.QueryCliente;
 import com.mibanco.prestamo.es.utils.exceptions.ApplicationExceptionValidation;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.core.Response;
@@ -52,8 +54,24 @@ public class PrestamoValidator {
         return !isValidateSuccess;
     }
 
+    public void validarPrestamoQuery(QueryPrestamo numeroPrestamo) {
+        if (numeroPrestamo == null) {
+            throw new ApplicationExceptionValidation(
+                    Response.Status.BAD_REQUEST.getStatusCode(), Constans.SERVICIO_INTERNAL + "numeroCliente no puede ser nulo"
+            );
+        }
+    }
+
+    public void validarPrestamoQueryCiente(QueryCliente numeroCliente) {
+        if (numeroCliente == null) {
+            throw new ApplicationExceptionValidation(
+                    Response.Status.BAD_REQUEST.getStatusCode(), Constans.SERVICIO_INTERNAL + "numeroCliente no puede ser nulo"
+            );
+        }
+    }
+
     public void validarConsulta(Integer numeroCliente) {
-        if(numeroCliente == null) {
+        if (numeroCliente == null) {
             throw new ApplicationExceptionValidation(
                     Response.Status.BAD_REQUEST.getStatusCode(), Constans.VALIDACION + " numero de Cliente, valor no debe ser nulo."
             );
