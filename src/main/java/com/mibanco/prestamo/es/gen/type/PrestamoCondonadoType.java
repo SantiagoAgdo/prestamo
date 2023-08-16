@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoCondonadoType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-15T17:12:32.457853-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-16T15:24:23.496083-05:00[America/Bogota]")
 public class PrestamoCondonadoType   {
   private @Valid Float abonoACapital = null;
   private @Valid Float comisionComisionIVA = null;
@@ -56,7 +56,6 @@ public class PrestamoCondonadoType   {
   }
 
   /**
-   *
    **/
   public PrestamoCondonadoType comisionComisionIVA(Float comisionComisionIVA) {
     this.comisionComisionIVA = comisionComisionIVA;
@@ -75,7 +74,6 @@ public class PrestamoCondonadoType   {
   }
 
   /**
-   *
    **/
   public PrestamoCondonadoType diasVencidos(Integer diasVencidos) {
     this.diasVencidos = diasVencidos;
@@ -439,15 +437,15 @@ public class PrestamoCondonadoType   {
             Objects.equals(this.interesesCteBalance, prestamoCondonadoType.interesesCteBalance) &&
             Objects.equals(this.interesesCteContingente, prestamoCondonadoType.interesesCteContingente) &&
             Objects.equals(this.interesesMoraBalance, prestamoCondonadoType.interesesMoraBalance) &&
-        Objects.equals(this.interesesMoraContingente, prestamoCondonadoType.interesesMoraContingente) &&
-        Objects.equals(this.leyMipymeLeyMipymeIVA, prestamoCondonadoType.leyMipymeLeyMipymeIVA) &&
-        Objects.equals(this.numeroCuota, prestamoCondonadoType.numeroCuota) &&
-        Objects.equals(this.numeroPrestamo, prestamoCondonadoType.numeroPrestamo) &&
-        Objects.equals(this.otrosGastos, prestamoCondonadoType.otrosGastos) &&
-        Objects.equals(this.otrosGastosIVA, prestamoCondonadoType.otrosGastosIVA) &&
-        Objects.equals(this.seguroAdicional, prestamoCondonadoType.seguroAdicional) &&
-        Objects.equals(this.seguroVida, prestamoCondonadoType.seguroVida) &&
-        Objects.equals(this.totalCuota, prestamoCondonadoType.totalCuota);
+            Objects.equals(this.interesesMoraContingente, prestamoCondonadoType.interesesMoraContingente) &&
+            Objects.equals(this.leyMipymeLeyMipymeIVA, prestamoCondonadoType.leyMipymeLeyMipymeIVA) &&
+            Objects.equals(this.numeroCuota, prestamoCondonadoType.numeroCuota) &&
+            Objects.equals(this.numeroPrestamo, prestamoCondonadoType.numeroPrestamo) &&
+            Objects.equals(this.otrosGastos, prestamoCondonadoType.otrosGastos) &&
+            Objects.equals(this.otrosGastosIVA, prestamoCondonadoType.otrosGastosIVA) &&
+            Objects.equals(this.seguroAdicional, prestamoCondonadoType.seguroAdicional) &&
+            Objects.equals(this.seguroVida, prestamoCondonadoType.seguroVida) &&
+            Objects.equals(this.totalCuota, prestamoCondonadoType.totalCuota);
   }
 
   @Override

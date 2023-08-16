@@ -7,12 +7,19 @@ import java.util.List;
 public interface PrestamoService {
 
     List<PrestamoType> consultarPrestamo(Integer numeroCliente);
-    List<PrestamoCondonadoType> consultarPrestamoCondonado(Integer numeroCliente);
-    List<PrestamoDetallePagosType> consultarPrestamoDetallePagos(Integer numeroCliente);
-    List<PrestamoGarantiaType> consultarPrestamoGarantiaOutput(Integer numeroCliente);
-    List<PrestamoOtroTitularType> consultarPrestamoOtroTitular(Integer numeroCliente);
-    List<PrestamoPlanDePagosType> consultarPrestamoPlanDePagos(Integer numeroCliente);
-    List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente);
-    List<PrestamoPorPagarType> consultarPrestamoPorPagar(Integer numeroCliente);
+
+    List<PrestamoCondonadoType> consultarPrestamoCondonado(Integer numeroPrestamo);
+
+    List<PrestamoDetallePagosType> consultarPrestamoDetallePagos(Integer numeroPrestamo);
+
+    List<PrestamoGarantiaType> consultarPrestamoGarantiaOutput(Integer numeroPrestamo);
+
+    List<PrestamoOtroTitularType> consultarPrestamoOtroTitular(Integer numeroPrestamo);
+
+    List<PrestamoPlanDePagosType> consultarPrestamoPlanDePagos(Integer numeroPrestamo);
+
+    List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(Integer numeroPrestamo);
+
+    List<PrestamoPorPagarType> consultarPrestamoPorPagar(Integer numeroPrestamo);
 
 }

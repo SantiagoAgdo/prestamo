@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoPorPagarType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-15T17:12:32.457853-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-16T15:24:23.496083-05:00[America/Bogota]")
 public class PrestamoPorPagarType   {
   private @Valid Integer numeroCuota;
   private @Valid Date fechaAPagar = null;
@@ -216,7 +216,6 @@ public class PrestamoPorPagarType   {
   }
 
   /**
-   *
    **/
   public PrestamoPorPagarType comisionComisionIVA(Float comisionComisionIVA) {
     this.comisionComisionIVA = comisionComisionIVA;
@@ -235,7 +234,6 @@ public class PrestamoPorPagarType   {
   }
 
   /**
-   *
    **/
   public PrestamoPorPagarType GACGACIVA(Float GACGACIVA) {
     this.GACGACIVA = GACGACIVA;
