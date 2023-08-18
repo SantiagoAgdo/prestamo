@@ -23,6 +23,11 @@ public class PrestamoController implements V1Prestamo {
     @Inject
     PrestamoValidator validator;
 
+    public PrestamoController(PrestamoServiceImpl p, PrestamoValidator v) {
+        this.prestamoService = p;
+        this.validator = v;
+    }
+
 
     @Override
     public Response consultarPrestamo(Integer numeroCliente) {

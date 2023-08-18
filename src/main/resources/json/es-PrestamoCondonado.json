@@ -1,0 +1,23 @@
+{
+  "abonoACapital": 0,
+  "comisionComisionIVA": null,
+  "diasVencidos": 0,
+  "estado": "",
+  "fechaAPagar": "2023-08-18T14:12:20.245+00:00",
+  "fechaPago": "2023-08-18T14:12:20.245+00:00",
+  "gastoExtraDiferidoGastoExtraDiferidoIVA": 0,
+  "gastoExtraJudicialGastoExtraJudicialIVA": 0,
+  "interesesCteBalance": 0,
+  "InteresesCteContingente": 0,
+  "interesesMoraBalance": 0,
+  "interesesMoraContingente": 0,
+  "leyMipymeLeyMipymeIVA": 0,
+  "numeroCuota": 1,
+  "numeroPrestamo": "10002",
+  "otrosGastos": 0,
+  "otrosGastosIVA": 0,
+  "seguroAdicional": 0,
+  "seguroVida": 0,
+  "totalCuota": 0,
+  "GACGACIVA": 0
+}

@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoDetallePagosType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-16T15:24:23.496083-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-18T12:43:29.415064-05:00[America/Bogota]")
 public class PrestamoDetallePagosType   {
   private @Valid Date fechaPago = null;
   private @Valid Float valorPagado = null;

@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoPorPagarType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-16T15:24:23.496083-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-18T12:43:29.415064-05:00[America/Bogota]")
 public class PrestamoPorPagarType   {
   private @Valid Integer numeroCuota;
   private @Valid Date fechaAPagar = null;
@@ -223,7 +223,7 @@ public class PrestamoPorPagarType   {
   }
 
 
-  @JsonProperty("comisionComisionIVA")
+    @JsonProperty("comisionComisionIVA")
   public Float getComisionComisionIVA() {
     return comisionComisionIVA;
   }
@@ -387,25 +387,25 @@ public class PrestamoPorPagarType   {
       return false;
     }
     PrestamoPorPagarType prestamoPorPagarType = (PrestamoPorPagarType) o;
-    return Objects.equals(this.numeroCuota, prestamoPorPagarType.numeroCuota) &&
-            Objects.equals(this.fechaAPagar, prestamoPorPagarType.fechaAPagar) &&
-            Objects.equals(this.abonoACapital, prestamoPorPagarType.abonoACapital) &&
-            Objects.equals(this.interesesCteBalance, prestamoPorPagarType.interesesCteBalance) &&
-            Objects.equals(this.interesesCteContingente, prestamoPorPagarType.interesesCteContingente) &&
-            Objects.equals(this.interesesMoraBalance, prestamoPorPagarType.interesesMoraBalance) &&
-            Objects.equals(this.interesesMoraContingente, prestamoPorPagarType.interesesMoraContingente) &&
-            Objects.equals(this.seguroVida, prestamoPorPagarType.seguroVida) &&
-            Objects.equals(this.seguroAdicional, prestamoPorPagarType.seguroAdicional) &&
-            Objects.equals(this.leyMipymeLeyMipymeIVA, prestamoPorPagarType.leyMipymeLeyMipymeIVA) &&
-            Objects.equals(this.comisionComisionIVA, prestamoPorPagarType.comisionComisionIVA) &&
-            Objects.equals(this.GACGACIVA, prestamoPorPagarType.GACGACIVA) &&
-            Objects.equals(this.gastoExtraJudicialGastoExtraJudicialIVA, prestamoPorPagarType.gastoExtraJudicialGastoExtraJudicialIVA) &&
-            Objects.equals(this.gastoExtraDiferidoGastoExtraDiferidoIVA, prestamoPorPagarType.gastoExtraDiferidoGastoExtraDiferidoIVA) &&
-            Objects.equals(this.totalCuota, prestamoPorPagarType.totalCuota) &&
-            Objects.equals(this.estado, prestamoPorPagarType.estado) &&
-            Objects.equals(this.fechaPago, prestamoPorPagarType.fechaPago) &&
-            Objects.equals(this.diasVencidos, prestamoPorPagarType.diasVencidos) &&
-            Objects.equals(this.numeroPrestamo, prestamoPorPagarType.numeroPrestamo);
+      return Objects.equals(this.numeroCuota, prestamoPorPagarType.numeroCuota) &&
+              Objects.equals(this.fechaAPagar, prestamoPorPagarType.fechaAPagar) &&
+              Objects.equals(this.abonoACapital, prestamoPorPagarType.abonoACapital) &&
+              Objects.equals(this.interesesCteBalance, prestamoPorPagarType.interesesCteBalance) &&
+              Objects.equals(this.interesesCteContingente, prestamoPorPagarType.interesesCteContingente) &&
+              Objects.equals(this.interesesMoraBalance, prestamoPorPagarType.interesesMoraBalance) &&
+              Objects.equals(this.interesesMoraContingente, prestamoPorPagarType.interesesMoraContingente) &&
+              Objects.equals(this.seguroVida, prestamoPorPagarType.seguroVida) &&
+              Objects.equals(this.seguroAdicional, prestamoPorPagarType.seguroAdicional) &&
+              Objects.equals(this.leyMipymeLeyMipymeIVA, prestamoPorPagarType.leyMipymeLeyMipymeIVA) &&
+              Objects.equals(this.comisionComisionIVA, prestamoPorPagarType.comisionComisionIVA) &&
+              Objects.equals(this.GACGACIVA, prestamoPorPagarType.GACGACIVA) &&
+              Objects.equals(this.gastoExtraJudicialGastoExtraJudicialIVA, prestamoPorPagarType.gastoExtraJudicialGastoExtraJudicialIVA) &&
+              Objects.equals(this.gastoExtraDiferidoGastoExtraDiferidoIVA, prestamoPorPagarType.gastoExtraDiferidoGastoExtraDiferidoIVA) &&
+              Objects.equals(this.totalCuota, prestamoPorPagarType.totalCuota) &&
+              Objects.equals(this.estado, prestamoPorPagarType.estado) &&
+              Objects.equals(this.fechaPago, prestamoPorPagarType.fechaPago) &&
+              Objects.equals(this.diasVencidos, prestamoPorPagarType.diasVencidos) &&
+              Objects.equals(this.numeroPrestamo, prestamoPorPagarType.numeroPrestamo);
   }
 
   @Override

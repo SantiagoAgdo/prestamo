@@ -1,0 +1,14 @@
+{
+  "fechaPago": "2023-08-18T14:10:46.955+00:00",
+  "valorPagado": 0,
+  "abonoACapital": 0,
+  "interesesCorrientes": 0,
+  "interesesMora": 0,
+  "seguroVida": 0,
+  "leyMipyme": 0,
+  "leyMipymeIVA": 0,
+  "cargoCobranza": 0,
+  "cobranzaIVA": 0,
+  "otros": 0,
+  "numeroPrestamo": "10002"
+}

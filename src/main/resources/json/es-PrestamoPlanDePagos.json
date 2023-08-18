@@ -1,0 +1,15 @@
+{
+  "numeroCuota": 1,
+  "fechaAPagar": "2023-08-18T14:11:14.249+00:00",
+  "abonoACapital": 180000,
+  "intereses": 0,
+  "otrosCargos": 0,
+  "totalCuota": 200000,
+  "saldo": 800000,
+  "estado": "Activo",
+  "diasVencidos": 0,
+  "fechaPago": "2023-08-18T14:11:14.249+00:00",
+  "montoPagado": 0,
+  "prestamoPlanDePagosOtroCargo": "",
+  "numeroPrestamo": "10002"
+}
