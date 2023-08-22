@@ -21,7 +21,7 @@ public class PrestamoPorPagarEntity {
     public Float seguroVida;
     public Float seguroAdicional;
     public Float leyMipymeLeyMipymeIVA;
-    public Float comisiónComisiónIVA;
+    public Float comisionComisionIVA;
     public Float GACGACIVA;
     public Float gastoExtraJudicialGastoExtraJudicialIVA;
     public Float gastoExtraDiferidoGastoExtraDiferidoIVA;

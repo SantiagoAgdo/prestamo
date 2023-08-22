@@ -28,7 +28,7 @@ public class PrestamoGrpcMapper {
     }
 
 
-    public Integer queryClienteGrpcToEntity(QueryCliente grpc) {
+    public Integer queryClienteGrpcToEntity(String grpc) {
         return new ModelMapper().map(grpc, Integer.class);
     }
 

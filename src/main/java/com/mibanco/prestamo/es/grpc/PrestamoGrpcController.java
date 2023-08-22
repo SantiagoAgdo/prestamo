@@ -40,8 +40,8 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
             validator.validarPrestamoQueryCiente(request);
-            Integer entity = mapper.queryClienteGrpcToEntity(request);
-            List<PrestamoType> prestamoListType = prestamoService.consultarPrestamo(entity);
+//            Integer entity = mapper.queryClienteGrpcToEntity(Inrequest.getNumeroCliente());
+            List<PrestamoType> prestamoListType = prestamoService.consultarPrestamo(Integer.parseInt(request.getNumeroCliente()));
 
             List<Prestamo> prestamoResponse = new ArrayList<>();
             for (PrestamoType alert : prestamoListType) {
@@ -93,8 +93,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
             validator.validarPrestamoQuery(request);
-            Integer entity = mapper.queryPrestamoGrpcToEntity(request);
-            List<PrestamoPorPagarType> prestamoListType = prestamoService.consultarPrestamoPorPagar(entity);
+            List<PrestamoPorPagarType> prestamoListType = prestamoService.consultarPrestamoPorPagar(Integer.parseInt(request.getNumeroPrestamo()));
 
             List<PrestamoPorPagar> prestamoResponse = new ArrayList<>();
             for (PrestamoPorPagarType alert : prestamoListType) {
@@ -109,7 +108,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
                         .setSeguroVida(alert.getSeguroVida())
                         .setSeguroAdicional(alert.getSeguroAdicional())
                         .setLeyMipymeLeyMipymeIVA(alert.getLeyMipymeLeyMipymeIVA())
-                        .setComisionComisionIVA(alert.getComisionComisionIVA())
+                        .setComisionComisionIVA(6f)
                         .setGACGACIVA(alert.getGACGACIVA())
                         .setGastoExtraJudicialGastoExtraJudicialIVA(alert.getGastoExtraJudicialGastoExtraJudicialIVA())
                         .setGastoExtraDiferidoGastoExtraDiferidoIVA(alert.getGastoExtraDiferidoGastoExtraDiferidoIVA())
@@ -146,8 +145,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
 //            validator.validarPrestamoQuery(request);
-            Integer entity = mapper.queryPrestamoCuotaGrpcToEntity(request);
-            List<PrestamoPlanDePagosOtroCargoType> prestamoListType = prestamoService.consultarPrestamoPlanDePagosOtroCargo(entity);
+            List<PrestamoPlanDePagosOtroCargoType> prestamoListType = prestamoService.consultarPrestamoPlanDePagosOtroCargo(Integer.parseInt(request.getNumeroPrestamo()), 1);
 
             List<PrestamoPlanDePagosOtroCargo> prestamoResponse = new ArrayList<>();
             for (PrestamoPlanDePagosOtroCargoType alert : prestamoListType) {
@@ -184,8 +182,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
             validator.validarPrestamoQuery(request);
-            Integer entity = mapper.queryPrestamoGrpcToEntity(request);
-            List<PrestamoPlanDePagosType> prestamoListType = prestamoService.consultarPrestamoPlanDePagos(entity);
+            List<PrestamoPlanDePagosType> prestamoListType = prestamoService.consultarPrestamoPlanDePagos(Integer.parseInt(request.getNumeroPrestamo()));
 
             List<PrestamoPlanDePagos> prestamoResponse = new ArrayList<>();
             for (PrestamoPlanDePagosType alert : prestamoListType) {
@@ -231,8 +228,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
             validator.validarPrestamoQuery(request);
-            Integer entity = mapper.queryPrestamoGrpcToEntity(request);
-            List<PrestamoOtroTitularType> prestamoListType = prestamoService.consultarPrestamoOtroTitular(entity);
+            List<PrestamoOtroTitularType> prestamoListType = prestamoService.consultarPrestamoOtroTitular(Integer.parseInt(request.getNumeroPrestamo()));
 
             List<PrestamoOtroTitular> prestamoResponse = new ArrayList<>();
             for (PrestamoOtroTitularType alert : prestamoListType) {
@@ -273,8 +269,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
             validator.validarPrestamoQuery(request);
-            Integer entity = mapper.queryPrestamoGrpcToEntity(request);
-            List<PrestamoGarantiaType> prestamoListType = prestamoService.consultarPrestamoGarantiaOutput(entity);
+            List<PrestamoGarantiaType> prestamoListType = prestamoService.consultarPrestamoGarantiaOutput(Integer.parseInt(request.getNumeroPrestamo()));
 
             List<PrestamoGarantia> prestamoResponse = new ArrayList<>();
             for (PrestamoGarantiaType alert : prestamoListType) {
@@ -312,8 +307,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
             validator.validarPrestamoQuery(request);
-            Integer entity = mapper.queryPrestamoGrpcToEntity(request);
-            List<PrestamoDetallePagosType> prestamoListType = prestamoService.consultarPrestamoDetallePagos(entity);
+            List<PrestamoDetallePagosType> prestamoListType = prestamoService.consultarPrestamoDetallePagos(Integer.parseInt(request.getNumeroPrestamo()));
 
             List<PrestamoDeatellePagos> prestamoResponse = new ArrayList<>();
             for (PrestamoDetallePagosType alert : prestamoListType) {
@@ -358,14 +352,13 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
             validator.validarPrestamoQuery(request);
-            Integer entity = mapper.queryPrestamoGrpcToEntity(request);
-            List<PrestamoCondonadoType> prestamoListType = prestamoService.consultarPrestamoCondonado(entity);
+            List<PrestamoCondonadoType> prestamoListType = prestamoService.consultarPrestamoCondonado(Integer.parseInt(request.getNumeroPrestamo()));
 
             List<PrestamoCondonado> prestamoResponse = new ArrayList<>();
             for (PrestamoCondonadoType alert : prestamoListType) {
                 prestamoResponse.add(com.mibanco.prestamo.es.PrestamoCondonado.newBuilder()
                         .setAbonoACapital(alert.getAbonoACapital())
-                        .setComisionComisionIVA(alert.getComisionComisionIVA())
+                        .setComisionComisionIVA(6f)
                         .setDiasVencidos(alert.getDiasVencidos())
                         .setEstado(alert.getEstado())
                         .setFechaAPagar(alert.getFechaAPagar().toString())

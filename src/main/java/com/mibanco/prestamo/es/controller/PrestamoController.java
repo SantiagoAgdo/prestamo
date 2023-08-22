@@ -38,7 +38,7 @@ public class PrestamoController implements V1Prestamo {
 
             LOG.info("Finaliza consulta de Prestamo");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :
-                    Response.status(Response.Status.OK).entity(Constans.SIN_REGISTROS).build(); //204 Not Content
+                    Response.status(Response.Status.OK).entity(Constans.SIN_PRESTAMOS).build(); //204 Not Content
 
         } catch (ApplicationExceptionValidation e) {
 
@@ -61,7 +61,7 @@ public class PrestamoController implements V1Prestamo {
 
             LOG.info("Finaliza consulta de Prestamo Condonado");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :
-                    Response.status(Response.Status.OK).entity(Constans.SIN_REGISTROS).build(); //204 Not Content
+                    Response.status(Response.Status.OK).entity(Constans.SIN_PRESTAMOS_CONDONADOS).build(); //204 Not Content
 
         } catch (ApplicationExceptionValidation e) {
 
@@ -84,7 +84,7 @@ public class PrestamoController implements V1Prestamo {
 
             LOG.info("Finaliza consulta de Prestamo Garantia");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :
-                    Response.status(Response.Status.OK).entity(Constans.SIN_REGISTROS).build(); //204 Not Content
+                    Response.status(Response.Status.OK).entity(Constans.SIN_PRESTAMOS_GARANTIA).build(); //204 Not Content
 
         } catch (ApplicationExceptionValidation e) {
 
@@ -107,7 +107,7 @@ public class PrestamoController implements V1Prestamo {
 
             LOG.info("Finaliza consulta de Prestamo Otro Titular");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :
-                    Response.status(Response.Status.OK).entity(Constans.SIN_REGISTROS).build(); //204 Not Content
+                    Response.status(Response.Status.OK).entity(Constans.SIN_PRESTAMOS_OTRO).build(); //204 Not Content
 
         } catch (ApplicationExceptionValidation e) {
 
@@ -130,7 +130,7 @@ public class PrestamoController implements V1Prestamo {
 
             LOG.info("Finaliza consulta de Prestamo  Plan de pagos");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :
-                    Response.status(Response.Status.OK).entity(Constans.SIN_REGISTROS).build(); //204 Not Content
+                    Response.status(Response.Status.OK).entity(Constans.SIN_PRESTAMOS_PLAN_DE_PAGOS).build(); //204 Not Content
 
         } catch (ApplicationExceptionValidation e) {
 
@@ -149,11 +149,11 @@ public class PrestamoController implements V1Prestamo {
         LOG.info("Inicia consulta de Prestamo Plan de pagos otro cargo");
         try {
             validator.validarConsulta(numeroPrestamo);
-            List<PrestamoPlanDePagosOtroCargoType> listaPrestamo = prestamoService.consultarPrestamoPlanDePagosOtroCargo(numeroPrestamo);
+            List<PrestamoPlanDePagosOtroCargoType> listaPrestamo = prestamoService.consultarPrestamoPlanDePagosOtroCargo(numeroPrestamo, numeroCuota);
 
             LOG.info("Finaliza consulta de Prestamo  Plan de pagos otro cargo");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :
-                    Response.status(Response.Status.OK).entity(Constans.SIN_REGISTROS).build(); //204 Not Content
+                    Response.status(Response.Status.OK).entity(Constans.SIN_PRESTAMOS_PLAN_DE_PAGOS_OTRO).build(); //204 Not Content
 
         } catch (ApplicationExceptionValidation e) {
 
@@ -176,7 +176,7 @@ public class PrestamoController implements V1Prestamo {
 
             LOG.info("Finaliza consulta de Prestamo por pagar");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :
-                    Response.status(Response.Status.OK).entity(Constans.SIN_REGISTROS).build(); //204 Not Content
+                    Response.status(Response.Status.OK).entity(Constans.SIN_PRESTAMOS_POR_PAGAR).build(); //204 Not Content
 
         } catch (ApplicationExceptionValidation e) {
 
@@ -199,7 +199,7 @@ public class PrestamoController implements V1Prestamo {
 
             LOG.info("Finaliza consulta de  Detalle Pagos");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :
-                    Response.status(Response.Status.OK).entity(Constans.SIN_REGISTROS).build(); //204 Not Content
+                    Response.status(Response.Status.OK).entity(Constans.SIN_PRESTAMOS_DETALLE).build(); //204 Not Content
 
         } catch (ApplicationExceptionValidation e) {
 

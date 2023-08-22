@@ -87,9 +87,9 @@ public class PrestamoServiceImpl implements PrestamoService {
 
     @Override
     @Transactional
-    public List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente) {
+    public List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente, Integer numeroCuota) {
         LOG.info("Inicia consulta de Prestamo plan de pagos otro cargo");
-        List<PrestamoPlanDePagosOtroCargoEntity> list = prestamoDao.consultarPrestamoPlanDePagosOtroCargo(numeroCliente);
+        List<PrestamoPlanDePagosOtroCargoEntity> list = prestamoDao.consultarPrestamoPlanDePagosOtroCargo(numeroCliente, numeroCuota);
 
         LOG.info("Termina consulta de Prestamo plan de pagos otro cargo");
         return list.stream().map(mapper::prestamoPlanDePagosOtroToType).collect(Collectors.toList());

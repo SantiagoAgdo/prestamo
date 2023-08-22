@@ -18,7 +18,7 @@ public interface PrestamoService {
 
     List<PrestamoPlanDePagosType> consultarPrestamoPlanDePagos(Integer numeroPrestamo);
 
-    List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(Integer numeroPrestamo);
+    List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(Integer numeroPrestamo, Integer numeroCuota);
 
     List<PrestamoPorPagarType> consultarPrestamoPorPagar(Integer numeroPrestamo);
 

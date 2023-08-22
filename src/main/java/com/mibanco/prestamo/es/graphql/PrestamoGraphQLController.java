@@ -116,12 +116,12 @@ public class PrestamoGraphQLController {
 
     @Query("consultarPrestamoPlanDePagosOtroCargo")
     @Description("Consulta de Plan de pagos prestamos otro cargo ")
-    public List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(@Name("numeroPrestamo") Integer numeroPrestamo) {
+    public List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(@Name("numeroPrestamo") Integer numeroPrestamo, @Name("numeroCuota") Integer numeroCuota) {
 
         logger.info("Inicia consultarPrestamoPlanDePagosOtroCargo en Graphql");
 
         try {
-            List<PrestamoPlanDePagosOtroCargoType> prestamo = service.consultarPrestamoPlanDePagosOtroCargo(numeroPrestamo);
+            List<PrestamoPlanDePagosOtroCargoType> prestamo = service.consultarPrestamoPlanDePagosOtroCargo(numeroPrestamo, numeroCuota);
             logger.info("Termina consultarPrestamoPlanDePagosOtroCargo en Graphql");
             return prestamo;
         } catch (ApplicationException e) {
