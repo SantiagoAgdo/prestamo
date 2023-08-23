@@ -1,0 +1,196 @@
+{
+  "info": {
+    "_postman_id": "c30de5af-665e-4e83-806d-3ba1af3df366",
+    "name": "Prestamo REST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19411614",
+    "_collection_link": "https://mibanquis.postman.co/workspace/Team-Workspace~36f2e5d8-1903-48c7-8433-bc86ee2d3208/collection/19411614-c30de5af-665e-4e83-806d-3ba1af3df366?action=share&source=collection_link&creator=19411614"
+  },
+  "item": [
+    {
+      "name": "consultarPrestamo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/es/Cliente/prestamo/10006",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "es",
+            "Cliente",
+            "prestamo",
+            "10006"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consultarPrestamoCondonado",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/es/Cliente/prestamoCondonado/10003",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "es",
+            "Cliente",
+            "prestamoCondonado",
+            "10003"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consultarPrestamoGarantia",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/es/Cliente/prestamoGarantia/10002",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "es",
+            "Cliente",
+            "prestamoGarantia",
+            "10002"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "prestamoOtroTitular",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/es/Cliente/prestamoOtroTitular/10003",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "es",
+            "Cliente",
+            "prestamoOtroTitular",
+            "10003"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PrestamoPlanDePagos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/es/Cliente/PrestamoPlanDePagos/10002",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "es",
+            "Cliente",
+            "PrestamoPlanDePagos",
+            "10002"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PrestamoPlanDePagosOtroCargo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/es/Cliente/PrestamoPlanDePagosOtroCargo/10003/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "es",
+            "Cliente",
+            "PrestamoPlanDePagosOtroCargo",
+            "10003",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "prestamoPorPagar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/es/Cliente/prestamoPorPagar/10002",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "es",
+            "Cliente",
+            "prestamoPorPagar",
+            "10002"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PrestamoDetallePagos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/es/Cliente/PrestamoDetallePagos/10003",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "es",
+            "Cliente",
+            "PrestamoDetallePagos",
+            "10003"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
