@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoOtroTitularType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-22T16:06:32.657970-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-09-01T15:21:33.573843100-05:00[America/Bogota]")
 public class PrestamoOtroTitularType   {
   private @Valid TipoDocumentoEnum tipoDocumento;
   private @Valid String numeroDocumento;

@@ -1,9 +1,6 @@
 openapi: 3.0.1
 servers:
   - description: Index swagger
-    #url local
-    -url: https://localhost:8080
-    #url produccion
     url: https://api.mibanco.com.co
 info:
   description: Servicios de entidad gestion de prestamos.
@@ -325,11 +322,12 @@ components:
         estadoActualPrestamo:
           type: string
         fechaDesembolso:
-          type: Date
+          type: string
         fechaUltimoPago:
-          type: Date
+          type: string
         montoDesembolsado:
-          type: float
+          type: integer
+          format: float
         numeroCliente:
           type: integer
         numeroPrestamo:
@@ -355,79 +353,105 @@ components:
           type: string
         #          $ref: "#/components/schemas/PrestamoPorPagarType" //Modeling incompleto
         saldoActual:
-          type: float
+          type: integer
+          format: float
         subProducto:
           $ref: "#/components/schemas/SubProductoEnum"
     PrestamoCondonadoType:
       type: object
       properties:
         abonoACapital:
-          type: float
+          type: integer
+          format: float
         comisionComisionIVA:
-          type: float
+          type: integer
+          format: float
         diasVencidos:
           type: integer
         estado:
           type: string
         fechaAPagar:
-          type: Date
+          type: string
         fechaPago:
-          type: Date
+          type: string
         GACGACIVA:
-          type: float
+          type: integer
+          format: float
         gastoExtraDiferidoGastoExtraDiferidoIVA:
-          type: float
+          type: integer
+          format: float
         gastoExtraJudicialGastoExtraJudicialIVA:
-          type: float
+          type: integer
+          format: float
         interesesCteBalance:
-          type: float
+          type: integer
+          format: float
         InteresesCteContingente:
-          type: float
+          type: integer
+          format: float
         interesesMoraBalance:
-          type: float
+          type: integer
+          format: float
         interesesMoraContingente:
-          type: float
+          type: integer
+          format: float
         leyMipymeLeyMipymeIVA:
-          type: float
+          type: integer
+          format: float
         numeroCuota:
           type: integer
         numeroPrestamo:
           type: string
         otrosGastos:
-          type: float
+          type: integer
+          format: float
         otrosGastosIVA:
-          type: float
+          type: integer
+          format: float
         seguroAdicional:
-          type: float
+          type: integer
+          format: float
         seguroVida:
-          type: float
+          type: integer
+          format: float
         totalCuota:
-          type: float
+          type: integer
+          format: float
     PrestamoDetallePagosType:
       type: object
       properties:
         fechaPago:
-          type: Date
+          type: string
         valorPagado:
-          type: float
+          type: integer
+          format: float
         abonoACapital:
-          type: float
+          type: integer
+          format: float
         interesesCorrientes:
-          type: float
+          type: integer
+          format: float
         interesesMora:
-          type: float
+          type: integer
+          format: float
         seguroVida:
-          type: float
+          type: integer
+          format: float
         leyMipyme:
-          type: float
+          type: integer
+          format: float
         leyMipymeIVA:
-          type: float
+          type: integer
+          format: float
         cargoCobranza:
-          type: float
+          type: integer
+          format: float
         cobranzaIVA:
-          type: float
+          type: integer
+          format: float
         otros:
-          type: float
+          type: integer
+          format: float
         numeroPrestamo:
           type: string
     PrestamoGarantiaType:
@@ -438,7 +462,8 @@ components:
         SubtipoGarantia:
           type: string
         avaluo:
-          type: float
+          type: integer
+          format: float
         referencia:
           type: string
         numeroPrestamo:
@@ -468,25 +493,31 @@ components:
         numeroCuota:
           type: integer
         fechaAPagar:
-          type: Date
+          type: string
         abonoACapital:
-          type: float
+          type: integer
+          format: float
         intereses:
-          type: float
+          type: integer
+          format: float
         otrosCargos:
-          type: float
+          type: integer
+          format: float
         totalCuota:
-          type: float
+          type: integer
+          format: float
         saldo:
-          type: float
+          type: integer
+          format: float
         estado:
           type: string
         diasVencidos:
           type: integer
         fechaPago:
-          type: Date
+          type: string
         montoPagado:
-          type: float
+          type: integer
+          format: float
         prestamoPlanDePagosOtroCargo:
           type: string
         #        $ref: '#/components/schemas/ListPrestamoPlanDePagosOtroCargoType' // sin data en  modeling
@@ -498,7 +529,8 @@ components:
         descripcionCargo:
           type: string
         valor:
-          type: float
+          type: integer
+          format: float
         numeroPrestamo:
           type: string
         numeroCuota:
@@ -509,37 +541,50 @@ components:
         numeroCuota:
           type: integer
         fechaAPagar:
-          type: Date
+          type: string
         abonoACapital:
-          type: float
+          type: integer
+          format: float
         interesesCteBalance:
-          type: float
+          type: integer
+          format: float
         interesesCteContingente:
-          type: float
+          type: integer
+          format: float
         interesesMoraBalance:
-          type: float
+          type: integer
+          format: float
         interesesMoraContingente:
-          type: float
+          type: integer
+          format: float
         seguroVida:
-          type: float
+          type: integer
+          format: float
         seguroAdicional:
-          type: float
+          type: integer
+          format: float
         leyMipymeLeyMipymeIVA:
-          type: float
+          type: integer
+          format: float
         comisionComisionIVA:
-          type: float
+          type: integer
+          format: float
         GACGACIVA:
-          type: float
+          type: integer
+          format: float
         gastoExtraJudicialGastoExtraJudicialIVA:
-          type: float
+          type: integer
+          format: float
         gastoExtraDiferidoGastoExtraDiferidoIVA:
-          type: float
+          type: integer
+          format: float
         totalCuota:
-          type: float
+          type: integer
+          format: float
         estado:
           type: string
         fechaPago:
-          type: Date
+          type: string
         diasVencidos:
           type: integer
         numeroPrestamo:

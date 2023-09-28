@@ -12,10 +12,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoPlanDePagosOtroCargoType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-08-22T16:06:32.657970-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-09-01T15:21:33.573843100-05:00[America/Bogota]")
 public class PrestamoPlanDePagosOtroCargoType   {
   private @Valid String descripcionCargo;
-  private @Valid Float valor = null;
+  private @Valid Integer valor;
   private @Valid String numeroPrestamo;
   private @Valid Integer numeroCuota;
 
@@ -39,19 +39,19 @@ public class PrestamoPlanDePagosOtroCargoType   {
 
   /**
    **/
-  public PrestamoPlanDePagosOtroCargoType valor(Float valor) {
+  public PrestamoPlanDePagosOtroCargoType valor(Integer valor) {
     this.valor = valor;
     return this;
   }
 
   
   @JsonProperty("valor")
-  public Float getValor() {
+  public Integer getValor() {
     return valor;
   }
 
   @JsonProperty("valor")
-  public void setValor(Float valor) {
+  public void setValor(Integer valor) {
     this.valor = valor;
   }
 
