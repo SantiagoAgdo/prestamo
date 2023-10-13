@@ -21,47 +21,47 @@ import java.util.List;
 import jakarta.validation.constraints.*;
 import jakarta.validation.Valid;
 
-@Path("/v1/es/Cliente")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-09-18T16:26:03.810482-05:00[America/Bogota]")
+@Path("/v1/es/prestamo-fic")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-13T10:47:48.102674-05:00[America/Bogota]")
 public interface V1Prestamo {
 
     @GET
-    @Path("/prestamo/{numeroCliente}")
-    @Produces({ "application/json" })
+    @Path("/{numeroCliente}")
+    @Produces({"application/json"})
     Response consultarPrestamo(@PathParam("numeroCliente") Integer numeroCliente);
 
     @GET
-    @Path("/prestamoCondonado/{numeroPrestamo}")
-    @Produces({ "application/json" })
+    @Path("/condonado/{numeroPrestamo}")
+    @Produces({"application/json"})
     Response consultarPrestamoCondonado(@PathParam("numeroPrestamo") Integer numeroPrestamo);
 
     @GET
-    @Path("/prestamoGarantia/{numeroPrestamo}")
-    @Produces({ "application/json" })
+    @Path("/garantia/{numeroPrestamo}")
+    @Produces({"application/json"})
     Response consultarPrestamoGarantia(@PathParam("numeroPrestamo") Integer numeroPrestamo);
 
     @GET
-    @Path("/prestamoOtroTitular/{numeroPrestamo}")
-    @Produces({ "application/json" })
+    @Path("/otro-titular/{numeroPrestamo}")
+    @Produces({"application/json"})
     Response consultarPrestamoOtroTitular(@PathParam("numeroPrestamo") Integer numeroPrestamo);
 
     @GET
-    @Path("/PrestamoPlanDePagos/{numeroPrestamo}")
-    @Produces({ "application/json" })
+    @Path("/plan-pagos/{numeroPrestamo}")
+    @Produces({"application/json"})
     Response consultarPrestamoPlanDePagos(@PathParam("numeroPrestamo") Integer numeroPrestamo);
 
     @GET
-    @Path("/PrestamoPlanDePagosOtroCargo/{numeroPrestamo}/{numeroCuota}")
-    @Produces({ "application/json" })
+    @Path("/otro-cargo/{numeroPrestamo}/{numeroCuota}")
+    @Produces({"application/json"})
     Response consultarPrestamoPlanDePagosOtroCargo(@PathParam("numeroPrestamo") Integer numeroPrestamo,@PathParam("numeroCuota") Integer numeroCuota);
 
     @GET
-    @Path("/prestamoPorPagar/{numeroPrestamo}")
-    @Produces({ "application/json" })
+    @Path("/pendiente/pago/{numeroPrestamo}")
+    @Produces({"application/json"})
     Response consultarPrestamoPorPagar(@PathParam("numeroPrestamo") Integer numeroPrestamo);
 
     @GET
-    @Path("/PrestamoDetallePagos/{numeroPrestamo}")
-    @Produces({ "application/json" })
+    @Path("/detalle-pagos/cliente/{numeroPrestamo}")
+    @Produces({"application/json"})
     Response prestamoDetallePagos(@PathParam("numeroPrestamo") Integer numeroPrestamo);
 }

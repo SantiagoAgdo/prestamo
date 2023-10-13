@@ -49,7 +49,7 @@ public class PrestamoControllerTest {
     }
 
     @Test
-    void consultarPrestamoTest() throws IOException {
+    void consultarPrestamoTestError() throws IOException {
 
         byte[] jsonData = Files.readAllBytes(Paths.get("src/main/resources/json/es-Prestamo.json"));
         String jsonString = new String(jsonData);
@@ -62,11 +62,11 @@ public class PrestamoControllerTest {
                 .when()
                 .post("v1/es/Cliente/prestamo/10002")
                 .then()
-                .statusCode(405);
+                .statusCode(404);
     }
 
     @Test
-    void consultarPrestamoCondonadoTest() throws IOException {
+    void consultarPrestamoCondonadoTestError() throws IOException {
 
         when(mockObjectMapper.readValue(any(byte[].class), any(Class.class))).thenReturn(new PrestamoCondonadoType());
 
@@ -79,11 +79,11 @@ public class PrestamoControllerTest {
                 .when()
                 .post("v1/es/Cliente/prestamoCondonado/10002")
                 .then()
-                .statusCode(405);
+                .statusCode(404);
     }
 
     @Test
-    void consultarPrestamoDetallePagosTest() throws IOException {
+    void consultarPrestamoDetallePagosTestError() throws IOException {
 
         when(mockObjectMapper.readValue(any(byte[].class), any(Class.class))).thenReturn(new PrestamoDetallePagosType());
 
@@ -96,11 +96,11 @@ public class PrestamoControllerTest {
                 .when()
                 .post("v1/es/Cliente/PrestamoDetallePagos/10002")
                 .then()
-                .statusCode(405);
+                .statusCode(404);
     }
 
     @Test
-    void consultarPrestamoGarantiaTest() throws IOException {
+    void consultarPrestamoGarantiaTestError() throws IOException {
 
         when(mockObjectMapper.readValue(any(byte[].class), any(Class.class))).thenReturn(new PrestamoGarantiaType());
 
@@ -113,11 +113,11 @@ public class PrestamoControllerTest {
                 .when()
                 .post("v1/es/Cliente/prestamoGarantia/10002")
                 .then()
-                .statusCode(405);
+                .statusCode(404);
     }
 
     @Test
-    void consultarPrestamoOtroTitularTest() throws IOException {
+    void consultarPrestamoOtroTitularTestError() throws IOException {
 
         when(mockObjectMapper.readValue(any(byte[].class), any(Class.class))).thenReturn(new PrestamoOtroTitularType());
 
@@ -130,11 +130,11 @@ public class PrestamoControllerTest {
                 .when()
                 .post("v1/es/Cliente/prestamoOtroTitular/10002")
                 .then()
-                .statusCode(405);
+                .statusCode(404);
     }
 
     @Test
-    void consultarPrestamoPlanDePagosTest() throws IOException {
+    void consultarPrestamoPlanDePagosTestError() throws IOException {
 
         when(mockObjectMapper.readValue(any(byte[].class), any(Class.class))).thenReturn(new PrestamoPlanDePagosType());
 
@@ -147,11 +147,11 @@ public class PrestamoControllerTest {
                 .when()
                 .post("v1/es/Cliente/PrestamoPlanDePagos/10002")
                 .then()
-                .statusCode(405);
+                .statusCode(404);
     }
 
     @Test
-    void consultarPrestamoPlanDePagosOtroCargoTest() throws IOException {
+    void consultarPrestamoPlanDePagosOtroCargoTestError() throws IOException {
 
         when(mockObjectMapper.readValue(any(byte[].class), any(Class.class))).thenReturn(new PrestamoPlanDePagosOtroCargoType());
 
@@ -164,11 +164,11 @@ public class PrestamoControllerTest {
                 .when()
                 .post("v1/es/Cliente/PrestamoPlanDePagosOtroCargo/10002/1")
                 .then()
-                .statusCode(405);
+                .statusCode(404);
     }
 
     @Test
-    void consultarPrestamoPorPagarTest() throws IOException {
+    void consultarPrestamoPorPagarTestError() throws IOException {
 
         when(mockObjectMapper.readValue(any(byte[].class), any(Class.class))).thenReturn(new PrestamoPorPagarType());
 
@@ -181,7 +181,7 @@ public class PrestamoControllerTest {
                 .when()
                 .post("v1/es/Cliente/prestamoPorPagar/10002")
                 .then()
-                .statusCode(405);
+                .statusCode(404);
     }
 
 }

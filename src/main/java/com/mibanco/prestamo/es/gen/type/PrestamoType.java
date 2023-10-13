@@ -1,7 +1,6 @@
 package com.mibanco.prestamo.es.gen.type;
 
 import com.mibanco.prestamo.es.gen.type.SubProductoEnum;
-import java.util.Date;
 import jakarta.validation.constraints.*;
 import jakarta.validation.Valid;
 
@@ -14,16 +13,16 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-09-18T16:26:03.810482-05:00[America/Bogota]")
-public class PrestamoType   {
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-13T10:47:48.102674-05:00[America/Bogota]")
+public class PrestamoType {
   private @Valid String condicionPrestamo;
   private @Valid Integer diasMoraActual;
   private @Valid Integer diasMoraMaxima;
   private @Valid Integer diasMoraPromedio;
   private @Valid String estadoActualPrestamo;
-  private @Valid Date fechaDesembolso = null;
-  private @Valid Date fechaUltimoPago = null;
-  private @Valid Float montoDesembolsado = null;
+  private @Valid String fechaDesembolso;
+  private @Valid String fechaUltimoPago;
+  private @Valid Integer montoDesembolsado;
   private @Valid Integer numeroCliente;
   private @Valid String numeroPrestamo;
   private @Valid Integer plazo;
@@ -33,7 +32,7 @@ public class PrestamoType   {
   private @Valid String prestamoOtroTitular;
   private @Valid String prestamoPlanDePagos;
   private @Valid String prestamoPorPagar;
-  private @Valid Float saldoActual = null;
+  private @Valid Integer saldoActual;
   private @Valid SubProductoEnum subProducto;
 
   /**
@@ -127,56 +126,59 @@ public class PrestamoType   {
   }
 
   /**
+   *
    **/
-  public PrestamoType fechaDesembolso(Date fechaDesembolso) {
+  public PrestamoType fechaDesembolso(String fechaDesembolso) {
     this.fechaDesembolso = fechaDesembolso;
     return this;
   }
 
-  
+
   @JsonProperty("fechaDesembolso")
-  public Date getFechaDesembolso() {
+  public String getFechaDesembolso() {
     return fechaDesembolso;
   }
 
   @JsonProperty("fechaDesembolso")
-  public void setFechaDesembolso(Date fechaDesembolso) {
+  public void setFechaDesembolso(String fechaDesembolso) {
     this.fechaDesembolso = fechaDesembolso;
   }
 
   /**
+   *
    **/
-  public PrestamoType fechaUltimoPago(Date fechaUltimoPago) {
+  public PrestamoType fechaUltimoPago(String fechaUltimoPago) {
     this.fechaUltimoPago = fechaUltimoPago;
     return this;
   }
 
-  
+
   @JsonProperty("fechaUltimoPago")
-  public Date getFechaUltimoPago() {
+  public String getFechaUltimoPago() {
     return fechaUltimoPago;
   }
 
   @JsonProperty("fechaUltimoPago")
-  public void setFechaUltimoPago(Date fechaUltimoPago) {
+  public void setFechaUltimoPago(String fechaUltimoPago) {
     this.fechaUltimoPago = fechaUltimoPago;
   }
 
   /**
+   *
    **/
-  public PrestamoType montoDesembolsado(Float montoDesembolsado) {
+  public PrestamoType montoDesembolsado(Integer montoDesembolsado) {
     this.montoDesembolsado = montoDesembolsado;
     return this;
   }
 
-  
+
   @JsonProperty("montoDesembolsado")
-  public Float getMontoDesembolsado() {
+  public Integer getMontoDesembolsado() {
     return montoDesembolsado;
   }
 
   @JsonProperty("montoDesembolsado")
-  public void setMontoDesembolsado(Float montoDesembolsado) {
+  public void setMontoDesembolsado(Integer montoDesembolsado) {
     this.montoDesembolsado = montoDesembolsado;
   }
 
@@ -343,20 +345,21 @@ public class PrestamoType   {
   }
 
   /**
+   *
    **/
-  public PrestamoType saldoActual(Float saldoActual) {
+  public PrestamoType saldoActual(Integer saldoActual) {
     this.saldoActual = saldoActual;
     return this;
   }
 
-  
+
   @JsonProperty("saldoActual")
-  public Float getSaldoActual() {
+  public Integer getSaldoActual() {
     return saldoActual;
   }
 
   @JsonProperty("saldoActual")
-  public void setSaldoActual(Float saldoActual) {
+  public void setSaldoActual(Integer saldoActual) {
     this.saldoActual = saldoActual;
   }
 
