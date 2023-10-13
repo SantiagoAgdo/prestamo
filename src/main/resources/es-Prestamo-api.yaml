@@ -23,7 +23,7 @@ tags:
 #Endpoints del Entidad
 #----------------------------
 paths:
-  /v1/es/Cliente/prestamo/{numeroCliente}:
+  /v1/es/prestamo-fic/{numeroCliente}:
     get:
       summary: Consulta prestamo
       operationId: consultarPrestamo
@@ -57,7 +57,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/Cliente/prestamoCondonado/{numeroPrestamo}:
+  /v1/es/prestamo-fic/condonado/{numeroPrestamo}:
     get:
       summary: Consulta prestamo condonado
       operationId: consultarPrestamoCondonado
@@ -91,7 +91,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/Cliente/PrestamoDetallePagos/{numeroPrestamo}:
+  /v1/es/prestamo-fic/detalle-pagos/cliente/{numeroPrestamo}:
     get:
       summary: Consulta detalle pagos
       operationId: PrestamoDetallePagos
@@ -125,7 +125,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/Cliente/prestamoGarantia/{numeroPrestamo}:
+  /v1/es/prestamo-fic/garantia/{numeroPrestamo}:
     get:
       summary: Consulta prestamo garantia
       operationId: consultarPrestamoGarantia
@@ -159,7 +159,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/Cliente/prestamoOtroTitular/{numeroPrestamo}:
+  /v1/es/prestamo-fic/otro-titular/{numeroPrestamo}:
     get:
       summary: Consulta prestamo otro titular
       operationId: consultarPrestamoOtroTitular
@@ -193,7 +193,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/Cliente/PrestamoPlanDePagos/{numeroPrestamo}:
+  /v1/es/prestamo-fic/plan-pagos/{numeroPrestamo}:
     get:
       summary: Consulta prestamo plan de pagos
       operationId: consultarPrestamoPlanDePagos
@@ -227,7 +227,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/Cliente/PrestamoPlanDePagosOtroCargo/{numeroPrestamo}/{numeroCuota}:
+  /v1/es/prestamo-fic/otro-cargo/{numeroPrestamo}/{numeroCuota}:
     get:
       summary: Consulta prestamo plan de pagos otro cargo
       operationId: consultarPrestamoPlanDePagosOtroCargo
@@ -267,7 +267,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/Cliente/prestamoPorPagar/{numeroPrestamo}:
+  /v1/es/prestamo-fic/pendiente/pago/{numeroPrestamo}:
     get:
       summary: Consulta prestamo por pagar
       operationId: consultarPrestamoPorPagar

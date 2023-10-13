@@ -56,11 +56,9 @@ public class PrestamoDaoImpl implements IPrestamoDao {
     @Override
     public List<PrestamoEntity> consultarPrestamo(Integer numeroCliente) {
 
-        List<PrestamoEntity> cliente = listPrestamo.stream()
+        return listPrestamo.stream()
                 .filter(x -> x.getNumeroCliente().equals(numeroCliente))
                 .toList();
-
-        return cliente;
     }
 
     @Override
