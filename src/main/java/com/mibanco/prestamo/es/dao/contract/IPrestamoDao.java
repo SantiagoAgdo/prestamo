@@ -13,7 +13,7 @@ public interface IPrestamoDao {
     List<PrestamoOtroTitularEntity> consultarPrestamoOtroTitular(Integer numeroCliente);
     List<PrestamoPlanDePagosEntity> consultarPrestamoPlanDePagos(Integer numeroCliente);
 
-    List<PrestamoPlanDePagosOtroCargoEntity> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente, Integer nCuota);
+    List<PrestamoPlanDePagosOtroCargoEntity> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente);
 
     List<PrestamoPorPagarEntity> consultarPrestamoPorPagar(Integer numeroCliente);
 }

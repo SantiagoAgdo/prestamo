@@ -158,8 +158,8 @@ public class PrestamoDaoImpl implements IPrestamoDao {
     }
 
     @Override
-    public List<PrestamoPlanDePagosOtroCargoEntity> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente, Integer nCuota) {
-        if (numeroCliente != 10002 || nCuota != 1) {
+    public List<PrestamoPlanDePagosOtroCargoEntity> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente) {
+        if (numeroCliente != 10002) {
             return new ArrayList<>();
         }
         List<PrestamoPlanDePagosOtroCargoEntity> prestamoPlanDePagosOtroCargoList = new ArrayList<>();

@@ -12,24 +12,23 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoPlanDePagosType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-13T10:47:48.102674-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
 public class PrestamoPlanDePagosType {
-  private @Valid Integer numeroCuota;
-  private @Valid String fechaAPagar;
-  private @Valid Integer abonoACapital;
-  private @Valid Integer intereses;
-  private @Valid Integer otrosCargos;
-  private @Valid Integer totalCuota;
-  private @Valid Integer saldo;
-  private @Valid String estado;
-  private @Valid Integer diasVencidos;
-  private @Valid String fechaPago;
+    private @Valid Integer numeroCuota;
+    private @Valid String fechaAPagar;
+    private @Valid Integer abonoACapital;
+    private @Valid Integer intereses;
+    private @Valid Integer otrosCargos;
+    private @Valid Integer totalCuota;
+    private @Valid Integer saldo;
+    private @Valid String estado;
+    private @Valid Integer diasVencidos;
+    private @Valid String fechaPago;
   private @Valid Integer montoPagado;
   private @Valid String prestamoPlanDePagosOtroCargo;
   private @Valid String numeroPrestamo;
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType numeroCuota(Integer numeroCuota) {
     this.numeroCuota = numeroCuota;
@@ -48,7 +47,6 @@ public class PrestamoPlanDePagosType {
   }
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType fechaAPagar(String fechaAPagar) {
     this.fechaAPagar = fechaAPagar;
@@ -56,7 +54,7 @@ public class PrestamoPlanDePagosType {
   }
 
 
-  @JsonProperty("fechaAPagar")
+    @JsonProperty("fechaAPagar")
   public String getFechaAPagar() {
     return fechaAPagar;
   }
@@ -67,7 +65,6 @@ public class PrestamoPlanDePagosType {
   }
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType abonoACapital(Integer abonoACapital) {
     this.abonoACapital = abonoACapital;
@@ -75,7 +72,7 @@ public class PrestamoPlanDePagosType {
   }
 
 
-  @JsonProperty("abonoACapital")
+    @JsonProperty("abonoACapital")
   public Integer getAbonoACapital() {
     return abonoACapital;
   }
@@ -86,7 +83,6 @@ public class PrestamoPlanDePagosType {
   }
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType intereses(Integer intereses) {
     this.intereses = intereses;
@@ -94,7 +90,7 @@ public class PrestamoPlanDePagosType {
   }
 
 
-  @JsonProperty("intereses")
+    @JsonProperty("intereses")
   public Integer getIntereses() {
     return intereses;
   }
@@ -105,7 +101,6 @@ public class PrestamoPlanDePagosType {
   }
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType otrosCargos(Integer otrosCargos) {
     this.otrosCargos = otrosCargos;
@@ -113,7 +108,7 @@ public class PrestamoPlanDePagosType {
   }
 
 
-  @JsonProperty("otrosCargos")
+    @JsonProperty("otrosCargos")
   public Integer getOtrosCargos() {
     return otrosCargos;
   }
@@ -124,7 +119,6 @@ public class PrestamoPlanDePagosType {
   }
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType totalCuota(Integer totalCuota) {
     this.totalCuota = totalCuota;
@@ -132,7 +126,7 @@ public class PrestamoPlanDePagosType {
   }
 
 
-  @JsonProperty("totalCuota")
+    @JsonProperty("totalCuota")
   public Integer getTotalCuota() {
     return totalCuota;
   }
@@ -143,7 +137,6 @@ public class PrestamoPlanDePagosType {
   }
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType saldo(Integer saldo) {
     this.saldo = saldo;
@@ -151,7 +144,7 @@ public class PrestamoPlanDePagosType {
   }
 
 
-  @JsonProperty("saldo")
+    @JsonProperty("saldo")
   public Integer getSaldo() {
     return saldo;
   }
@@ -198,7 +191,6 @@ public class PrestamoPlanDePagosType {
   }
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType fechaPago(String fechaPago) {
     this.fechaPago = fechaPago;
@@ -206,7 +198,7 @@ public class PrestamoPlanDePagosType {
   }
 
 
-  @JsonProperty("fechaPago")
+    @JsonProperty("fechaPago")
   public String getFechaPago() {
     return fechaPago;
   }
@@ -217,7 +209,6 @@ public class PrestamoPlanDePagosType {
   }
 
   /**
-   *
    **/
   public PrestamoPlanDePagosType montoPagado(Integer montoPagado) {
     this.montoPagado = montoPagado;
@@ -225,7 +216,7 @@ public class PrestamoPlanDePagosType {
   }
 
 
-  @JsonProperty("montoPagado")
+    @JsonProperty("montoPagado")
   public Integer getMontoPagado() {
     return montoPagado;
   }

@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoGarantiaType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-13T10:47:48.102674-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
 public class PrestamoGarantiaType   {
   private @Valid TipoGarantiaEnum tipoGarantia;
   private @Valid String subtipoGarantia;
@@ -58,7 +58,6 @@ public class PrestamoGarantiaType   {
   }
 
   /**
-   *
    **/
   public PrestamoGarantiaType avaluo(Integer avaluo) {
     this.avaluo = avaluo;
@@ -66,7 +65,7 @@ public class PrestamoGarantiaType   {
   }
 
 
-  @JsonProperty("avaluo")
+    @JsonProperty("avaluo")
   public Integer getAvaluo() {
     return avaluo;
   }

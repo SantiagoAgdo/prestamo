@@ -13,18 +13,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-13T10:47:48.102674-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
 public class PrestamoType {
-  private @Valid String condicionPrestamo;
-  private @Valid Integer diasMoraActual;
-  private @Valid Integer diasMoraMaxima;
-  private @Valid Integer diasMoraPromedio;
-  private @Valid String estadoActualPrestamo;
-  private @Valid String fechaDesembolso;
-  private @Valid String fechaUltimoPago;
-  private @Valid Integer montoDesembolsado;
-  private @Valid Integer numeroCliente;
-  private @Valid String numeroPrestamo;
+    private @Valid String condicionPrestamo;
+    private @Valid Integer diasMoraActual;
+    private @Valid Integer diasMoraMaxima;
+    private @Valid Integer diasMoraPromedio;
+    private @Valid String estadoActualPrestamo;
+    private @Valid String fechaDesembolso;
+    private @Valid String fechaUltimoPago;
+    private @Valid Integer montoDesembolsado;
+    private @Valid Integer numeroCliente;
+    private @Valid String numeroPrestamo;
   private @Valid Integer plazo;
   private @Valid String prestamoCondonado;
   private @Valid String prestamoDetallePagos;
@@ -126,7 +126,6 @@ public class PrestamoType {
   }
 
   /**
-   *
    **/
   public PrestamoType fechaDesembolso(String fechaDesembolso) {
     this.fechaDesembolso = fechaDesembolso;
@@ -134,7 +133,7 @@ public class PrestamoType {
   }
 
 
-  @JsonProperty("fechaDesembolso")
+    @JsonProperty("fechaDesembolso")
   public String getFechaDesembolso() {
     return fechaDesembolso;
   }
@@ -145,7 +144,6 @@ public class PrestamoType {
   }
 
   /**
-   *
    **/
   public PrestamoType fechaUltimoPago(String fechaUltimoPago) {
     this.fechaUltimoPago = fechaUltimoPago;
@@ -153,7 +151,7 @@ public class PrestamoType {
   }
 
 
-  @JsonProperty("fechaUltimoPago")
+    @JsonProperty("fechaUltimoPago")
   public String getFechaUltimoPago() {
     return fechaUltimoPago;
   }
@@ -164,7 +162,6 @@ public class PrestamoType {
   }
 
   /**
-   *
    **/
   public PrestamoType montoDesembolsado(Integer montoDesembolsado) {
     this.montoDesembolsado = montoDesembolsado;
@@ -172,7 +169,7 @@ public class PrestamoType {
   }
 
 
-  @JsonProperty("montoDesembolsado")
+    @JsonProperty("montoDesembolsado")
   public Integer getMontoDesembolsado() {
     return montoDesembolsado;
   }
@@ -345,7 +342,6 @@ public class PrestamoType {
   }
 
   /**
-   *
    **/
   public PrestamoType saldoActual(Integer saldoActual) {
     this.saldoActual = saldoActual;
@@ -353,7 +349,7 @@ public class PrestamoType {
   }
 
 
-  @JsonProperty("saldoActual")
+    @JsonProperty("saldoActual")
   public Integer getSaldoActual() {
     return saldoActual;
   }

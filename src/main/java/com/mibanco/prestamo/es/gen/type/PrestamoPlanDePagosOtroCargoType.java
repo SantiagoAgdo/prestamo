@@ -12,41 +12,41 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoPlanDePagosOtroCargoType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-13T10:47:48.102674-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
 public class PrestamoPlanDePagosOtroCargoType   {
-  private @Valid String descripcionCargo;
-  private @Valid Integer valor;
-  private @Valid String numeroPrestamo;
-  private @Valid Integer numeroCuota;
+    private @Valid String numeroPrestamo;
+    private @Valid Integer valor;
+    private @Valid String descripcionCargo;
 
-  /**
-   **/
-  public PrestamoPlanDePagosOtroCargoType descripcionCargo(String descripcionCargo) {
-    this.descripcionCargo = descripcionCargo;
-    return this;
-  }
-
-  
-  @JsonProperty("descripcionCargo")
-  public String getDescripcionCargo() {
-    return descripcionCargo;
-  }
-
-  @JsonProperty("descripcionCargo")
-  public void setDescripcionCargo(String descripcionCargo) {
-    this.descripcionCargo = descripcionCargo;
-  }
-
-  /**
-   *
-   **/
-  public PrestamoPlanDePagosOtroCargoType valor(Integer valor) {
-    this.valor = valor;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosOtroCargoType numeroPrestamo(String numeroPrestamo) {
+        this.numeroPrestamo = numeroPrestamo;
+        return this;
+    }
 
 
-  @JsonProperty("valor")
+    @JsonProperty("numeroPrestamo")
+    public String getNumeroPrestamo() {
+        return numeroPrestamo;
+    }
+
+    @JsonProperty("numeroPrestamo")
+    public void setNumeroPrestamo(String numeroPrestamo) {
+        this.numeroPrestamo = numeroPrestamo;
+    }
+
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosOtroCargoType valor(Integer valor) {
+        this.valor = valor;
+        return this;
+    }
+
+
+    @JsonProperty("valor")
   public Integer getValor() {
     return valor;
   }
@@ -56,74 +56,55 @@ public class PrestamoPlanDePagosOtroCargoType   {
     this.valor = valor;
   }
 
-  /**
-   **/
-  public PrestamoPlanDePagosOtroCargoType numeroPrestamo(String numeroPrestamo) {
-    this.numeroPrestamo = numeroPrestamo;
-    return this;
-  }
-
-  
-  @JsonProperty("numeroPrestamo")
-  public String getNumeroPrestamo() {
-    return numeroPrestamo;
-  }
-
-  @JsonProperty("numeroPrestamo")
-  public void setNumeroPrestamo(String numeroPrestamo) {
-    this.numeroPrestamo = numeroPrestamo;
-  }
-
-  /**
-   **/
-  public PrestamoPlanDePagosOtroCargoType numeroCuota(Integer numeroCuota) {
-    this.numeroCuota = numeroCuota;
-    return this;
-  }
-
-  
-  @JsonProperty("numeroCuota")
-  public Integer getNumeroCuota() {
-    return numeroCuota;
-  }
-
-  @JsonProperty("numeroCuota")
-  public void setNumeroCuota(Integer numeroCuota) {
-    this.numeroCuota = numeroCuota;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosOtroCargoType descripcionCargo(String descripcionCargo) {
+        this.descripcionCargo = descripcionCargo;
+        return this;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+
+    @JsonProperty("descripcionCargo")
+    public String getDescripcionCargo() {
+        return descripcionCargo;
+    }
+
+    @JsonProperty("descripcionCargo")
+    public void setDescripcionCargo(String descripcionCargo) {
+        this.descripcionCargo = descripcionCargo;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
     }
     PrestamoPlanDePagosOtroCargoType prestamoPlanDePagosOtroCargoType = (PrestamoPlanDePagosOtroCargoType) o;
-    return Objects.equals(this.descripcionCargo, prestamoPlanDePagosOtroCargoType.descripcionCargo) &&
-        Objects.equals(this.valor, prestamoPlanDePagosOtroCargoType.valor) &&
-        Objects.equals(this.numeroPrestamo, prestamoPlanDePagosOtroCargoType.numeroPrestamo) &&
-        Objects.equals(this.numeroCuota, prestamoPlanDePagosOtroCargoType.numeroCuota);
+        return Objects.equals(this.numeroPrestamo, prestamoPlanDePagosOtroCargoType.numeroPrestamo) &&
+                Objects.equals(this.valor, prestamoPlanDePagosOtroCargoType.valor) &&
+                Objects.equals(this.descripcionCargo, prestamoPlanDePagosOtroCargoType.descripcionCargo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(descripcionCargo, valor, numeroPrestamo, numeroCuota);
+      return Objects.hash(numeroPrestamo, valor, descripcionCargo);
   }
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PrestamoPlanDePagosOtroCargoType {\n");
-    
-    sb.append("    descripcionCargo: ").append(toIndentedString(descripcionCargo)).append("\n");
-    sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
-    sb.append("    numeroPrestamo: ").append(toIndentedString(numeroPrestamo)).append("\n");
-    sb.append("    numeroCuota: ").append(toIndentedString(numeroCuota)).append("\n");
-    sb.append("}");
-    return sb.toString();
+      StringBuilder sb = new StringBuilder();
+      sb.append("class PrestamoPlanDePagosOtroCargoType {\n");
+
+      sb.append("    numeroPrestamo: ").append(toIndentedString(numeroPrestamo)).append("\n");
+      sb.append("    valor: ").append(toIndentedString(valor)).append("\n");
+      sb.append("    descripcionCargo: ").append(toIndentedString(descripcionCargo)).append("\n");
+      sb.append("}");
+      return sb.toString();
   }
 
   /**

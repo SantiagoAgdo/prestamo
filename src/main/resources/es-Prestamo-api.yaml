@@ -224,7 +224,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/prestamo-fic/otro-cargo/{numeroPrestamo}/{numeroCuota}:
+  /v1/es/prestamo-fic/otro-cargo/{numeroPrestamo}:
     get:
       summary: Consulta prestamo plan de pagos otro cargo
       operationId: consultarPrestamoPlanDePagosOtroCargo
@@ -235,12 +235,6 @@ paths:
           schema:
             type: integer
           description: numero de prestamo
-        - in: path
-          name: numeroCuota
-          required: true
-          schema:
-            type: integer
-          description: numero de cuotas
       responses:
         "200":
           description: get prestamo.
@@ -526,15 +520,13 @@ components:
     PrestamoPlanDePagosOtroCargoType:
       type: object
       properties:
-        descripcionCargo:
+        numeroPrestamo:
           type: string
         valor:
           type: integer
           format: float
-        numeroPrestamo:
+        descripcionCargo:
           type: string
-        numeroCuota:
-          type: integer
     PrestamoPorPagarType:
       type: object
       properties:

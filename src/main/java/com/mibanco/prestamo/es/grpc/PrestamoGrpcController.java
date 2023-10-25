@@ -145,7 +145,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
         try {
 
 //            validator.validarPrestamoQuery(request);
-            List<PrestamoPlanDePagosOtroCargoType> prestamoListType = prestamoService.consultarPrestamoPlanDePagosOtroCargo(Integer.parseInt(request.getNumeroPrestamo()), 1);
+            List<PrestamoPlanDePagosOtroCargoType> prestamoListType = prestamoService.consultarPrestamoPlanDePagosOtroCargo(Integer.parseInt(request.getNumeroPrestamo()));
 
             List<PrestamoPlanDePagosOtroCargo> prestamoResponse = new ArrayList<>();
             for (PrestamoPlanDePagosOtroCargoType alert : prestamoListType) {
@@ -153,7 +153,6 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
                         .setDescripcionCargo(alert.getDescripcionCargo())
                         .setValor(alert.getValor())
                         .setNumeroPrestamo(alert.getNumeroPrestamo())
-                        .setNumeroCuota(alert.getNumeroCuota())
                         .build());
             }
 

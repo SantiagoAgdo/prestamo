@@ -145,11 +145,11 @@ public class PrestamoController implements V1Prestamo {
     }
 
     @Override
-    public Response consultarPrestamoPlanDePagosOtroCargo(Integer numeroPrestamo, Integer numeroCuota) {
+    public Response consultarPrestamoPlanDePagosOtroCargo(Integer numeroPrestamo) {
         LOG.info("Inicia consulta de Prestamo Plan de pagos otro cargo");
         try {
             validator.validarConsulta(numeroPrestamo);
-            List<PrestamoPlanDePagosOtroCargoType> listaPrestamo = prestamoService.consultarPrestamoPlanDePagosOtroCargo(numeroPrestamo, numeroCuota);
+            List<PrestamoPlanDePagosOtroCargoType> listaPrestamo = prestamoService.consultarPrestamoPlanDePagosOtroCargo(numeroPrestamo);
 
             LOG.info("Finaliza consulta de Prestamo  Plan de pagos otro cargo");
             return listaPrestamo.size() != 0 ? Response.status(Response.Status.OK).entity(listaPrestamo).build() :

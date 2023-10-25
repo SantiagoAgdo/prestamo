@@ -162,7 +162,7 @@ public class PrestamoControllerTest {
                 .contentType(ContentType.JSON)
                 .body(clienteType)
                 .when()
-                .post("v1/es/Cliente/PrestamoPlanDePagosOtroCargo/10002/1")
+                .post("v1/es/Cliente/PrestamoPlanDePagosOtroCargo/10002")
                 .then()
                 .statusCode(404);
     }

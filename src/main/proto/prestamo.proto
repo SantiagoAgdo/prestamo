@@ -74,7 +74,6 @@ message PrestamoPlanDePagosOtroCargo{
   string descripcionCargo = 1;
   float valor = 2;
   string numeroPrestamo = 3;
-  int32 numeroCuota = 4;
 }
 
 message  PrestamoOtroTitular{
@@ -174,7 +173,6 @@ message QueryPrestamo{
 
 message QueryPrestamoCuota{
   string numeroPrestamo = 1;
-  int32 numeroCuota = 2;
 }
 
 message QueryCliente{
