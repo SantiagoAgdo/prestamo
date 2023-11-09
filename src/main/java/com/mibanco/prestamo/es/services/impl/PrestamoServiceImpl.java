@@ -28,80 +28,80 @@ public class PrestamoServiceImpl implements PrestamoService {
     @Override
     @Transactional
     public List<PrestamoType> consultarPrestamo(Integer numeroCliente) {
-        LOG.info("Inicia consulta de Prestamo");
+        LOG.info("Inicia consulta de Préstamo");
         List<PrestamoEntity> list = prestamoDao.consultarPrestamo(numeroCliente);
 
-        LOG.info("Termina consulta de Prestamo");
+        LOG.info("Termina consulta de Préstamo");
         return list.stream().map(mapper::prestamoToType).collect(Collectors.toList());
     }
 
     @Override
     @Transactional
     public List<PrestamoCondonadoType> consultarPrestamoCondonado(Integer numeroCliente) {
-        LOG.info("Inicia consulta de Prestamo Condonado");
+        LOG.info("Inicia consulta de Préstamo Condonado");
         List<PrestamoCondonadoEntity> list = prestamoDao.consultarPrestamoCondonado(numeroCliente);
 
-        LOG.info("Termina consulta de Prestamo Condonado");
+        LOG.info("Termina consulta de Préstamo Condonado");
         return list.stream().map(mapper::prestamoCondonadoToType).collect(Collectors.toList());
     }
 
     @Override
     @Transactional
     public List<PrestamoDetallePagosType> consultarPrestamoDetallePagos(Integer numeroCliente) {
-        LOG.info("Inicia consulta de Prestamo Detalle Pagos");
+        LOG.info("Inicia consulta de Préstamo Detalle Pagos");
         List<PrestamoDetallePagosEntity> list = prestamoDao.consultarPrestamoDetallePagos(numeroCliente);
 
-        LOG.info("Termina consulta de Prestamo Detalle Pagos");
+        LOG.info("Termina consulta de Préstamo Detalle Pagos");
         return list.stream().map(mapper::prestamoDetallePagosToType).collect(Collectors.toList());
     }
 
     @Override
     @Transactional
     public List<PrestamoGarantiaType> consultarPrestamoGarantiaOutput(Integer numeroCliente) {
-        LOG.info("Inicia consulta de Prestamo garantias");
+        LOG.info("Inicia consulta de Préstamo garantias");
         List<PrestamoGarantiaEntity> list = prestamoDao.consultarPrestamoGarantiaOutput(numeroCliente);
 
-        LOG.info("Termina consulta de Prestamo garantias");
+        LOG.info("Termina consulta de Préstamo garantias");
         return list.stream().map(mapper::prestamoGarantiaToType).collect(Collectors.toList());
     }
 
     @Override
     @Transactional
     public List<PrestamoOtroTitularType> consultarPrestamoOtroTitular(Integer numeroCliente) {
-        LOG.info("Inicia consulta de Prestamo otro titular");
+        LOG.info("Inicia consulta de Préstamo otro titular");
         List<PrestamoOtroTitularEntity> list = prestamoDao.consultarPrestamoOtroTitular(numeroCliente);
 
-        LOG.info("Termina consulta de Prestamo otro titular");
+        LOG.info("Termina consulta de Préstamo otro titular");
         return list.stream().map(mapper::prestamoOtroTitularToType).collect(Collectors.toList());
     }
 
     @Override
     @Transactional
     public List<PrestamoPlanDePagosType> consultarPrestamoPlanDePagos(Integer numeroCliente) {
-        LOG.info("Inicia consulta de Prestamo plan de pagos");
+        LOG.info("Inicia consulta de Préstamo plan de pagos");
         List<PrestamoPlanDePagosEntity> list = prestamoDao.consultarPrestamoPlanDePagos(numeroCliente);
 
-        LOG.info("Termina consulta de Prestamo plan de pagos");
+        LOG.info("Termina consulta de Préstamo plan de pagos");
         return list.stream().map(mapper::prestamoPlanDePagosToType).collect(Collectors.toList());
     }
 
     @Override
     @Transactional
     public List<PrestamoPlanDePagosOtroCargoType> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente) {
-        LOG.info("Inicia consulta de Prestamo plan de pagos otro cargo");
+        LOG.info("Inicia consulta de Préstamo plan de pagos otro cargo");
         List<PrestamoPlanDePagosOtroCargoEntity> list = prestamoDao.consultarPrestamoPlanDePagosOtroCargo(numeroCliente);
 
-        LOG.info("Termina consulta de Prestamo plan de pagos otro cargo");
+        LOG.info("Termina consulta de Préstamo plan de pagos otro cargo");
         return list.stream().map(mapper::prestamoPlanDePagosOtroToType).collect(Collectors.toList());
     }
 
     @Override
     @Transactional
     public List<PrestamoPorPagarType> consultarPrestamoPorPagar(Integer numeroCliente) {
-        LOG.info("Inicia consulta de Prestamo por pagar");
+        LOG.info("Inicia consulta de Préstamo por pagar");
         List<PrestamoPorPagarEntity> list = prestamoDao.consultarPrestamoPorPagar(numeroCliente);
 
-        LOG.info("Termina consulta de Prestamo");
+        LOG.info("Termina consulta de Préstamo");
         return list.stream().map(mapper::prestamoPorPagarToType).collect(Collectors.toList());
     }
 }

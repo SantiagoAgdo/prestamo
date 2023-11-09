@@ -38,9 +38,7 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
     public void consultarPrestamo(QueryCliente request, io.grpc.stub.StreamObserver<ResponsePrestamo> responseObserver) {
         LOG.info("Inicia consultarPrestamo por GRPC");
         try {
-
-            validator.validarPrestamoQueryCiente(request);
-//            Integer entity = mapper.queryClienteGrpcToEntity(Inrequest.getNumeroCliente());
+            validator.validarPrestamoQueryCliente(request);
             List<PrestamoType> prestamoListType = prestamoService.consultarPrestamo(Integer.parseInt(request.getNumeroCliente()));
 
             List<Prestamo> prestamoResponse = new ArrayList<>();
@@ -75,12 +73,9 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
             responseObserver.onCompleted();
 
         } catch (ApplicationExceptionValidation e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INVALID_ARGUMENT, e.getMessage());
             responseObserver.onError(statusException);
-
         } catch (Exception e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INTERNAL, e.getMessage());
             responseObserver.onError(statusException);
         }
@@ -91,7 +86,6 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
     public void consultarPrestamoPorPagar(QueryPrestamo request, io.grpc.stub.StreamObserver<ResponsePrestamoPorPagar> responseObserver) {
         LOG.info("Inicia consultarPrestamoPorPagar por GRPC");
         try {
-
             validator.validarPrestamoQuery(request);
             List<PrestamoPorPagarType> prestamoListType = prestamoService.consultarPrestamoPorPagar(Integer.parseInt(request.getNumeroPrestamo()));
 
@@ -121,18 +115,15 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
             }
 
             ResponsePrestamoPorPagar response = ResponsePrestamoPorPagar.newBuilder().addAllObj(prestamoResponse).build();
-            LOG.info("Finaliza consultarPrestamo por GRPC");
+            LOG.info("Finaliza consultarPrestamoPorPagar por GRPC");
 
             responseObserver.onNext(response);
             responseObserver.onCompleted();
 
         } catch (ApplicationExceptionValidation e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INVALID_ARGUMENT, e.getMessage());
             responseObserver.onError(statusException);
-
         } catch (Exception e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INTERNAL, e.getMessage());
             responseObserver.onError(statusException);
         }
@@ -143,8 +134,6 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
     public void consultarPrestamoPlanDePagosOtroCargo(QueryPrestamoCuota request, io.grpc.stub.StreamObserver<ResponsePrestamoPlanDePagosOtroCargo> responseObserver) {
         LOG.info("Inicia consultarPrestamoPlanDePagosOtroCargo por GRPC");
         try {
-
-//            validator.validarPrestamoQuery(request);
             List<PrestamoPlanDePagosOtroCargoType> prestamoListType = prestamoService.consultarPrestamoPlanDePagosOtroCargo(Integer.parseInt(request.getNumeroPrestamo()));
 
             List<PrestamoPlanDePagosOtroCargo> prestamoResponse = new ArrayList<>();
@@ -163,12 +152,9 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
             responseObserver.onCompleted();
 
         } catch (ApplicationExceptionValidation e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INVALID_ARGUMENT, e.getMessage());
             responseObserver.onError(statusException);
-
         } catch (Exception e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INTERNAL, e.getMessage());
             responseObserver.onError(statusException);
         }
@@ -179,7 +165,6 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
     public void consultarPrestamoPlanDePagos(QueryPrestamo request, io.grpc.stub.StreamObserver<ResponsePrestamoPlandeDePagos> responseObserver) {
         LOG.info("Inicia consultarPrestamoPlanDePagos por GRPC");
         try {
-
             validator.validarPrestamoQuery(request);
             List<PrestamoPlanDePagosType> prestamoListType = prestamoService.consultarPrestamoPlanDePagos(Integer.parseInt(request.getNumeroPrestamo()));
 
@@ -209,12 +194,9 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
             responseObserver.onCompleted();
 
         } catch (ApplicationExceptionValidation e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INVALID_ARGUMENT, e.getMessage());
             responseObserver.onError(statusException);
-
         } catch (Exception e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INTERNAL, e.getMessage());
             responseObserver.onError(statusException);
         }
@@ -225,7 +207,6 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
     public void consultarPrestamoOtroTitular(QueryPrestamo request, io.grpc.stub.StreamObserver<ResponsePrestamoPlanDePagosOtroTitular> responseObserver) {
         LOG.info("Inicia consultarPrestamoOtroTitular por GRPC");
         try {
-
             validator.validarPrestamoQuery(request);
             List<PrestamoOtroTitularType> prestamoListType = prestamoService.consultarPrestamoOtroTitular(Integer.parseInt(request.getNumeroPrestamo()));
 
@@ -250,12 +231,9 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
             responseObserver.onCompleted();
 
         } catch (ApplicationExceptionValidation e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INVALID_ARGUMENT, e.getMessage());
             responseObserver.onError(statusException);
-
         } catch (Exception e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INTERNAL, e.getMessage());
             responseObserver.onError(statusException);
         }
@@ -266,7 +244,6 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
     public void consultarPrestamoGarantia(QueryPrestamo request, io.grpc.stub.StreamObserver<ResponsePrestamoGarantia> responseObserver) {
         LOG.info("Inicia consultarPrestamoGarantia por GRPC");
         try {
-
             validator.validarPrestamoQuery(request);
             List<PrestamoGarantiaType> prestamoListType = prestamoService.consultarPrestamoGarantiaOutput(Integer.parseInt(request.getNumeroPrestamo()));
 
@@ -288,12 +265,9 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
             responseObserver.onCompleted();
 
         } catch (ApplicationExceptionValidation e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INVALID_ARGUMENT, e.getMessage());
             responseObserver.onError(statusException);
-
         } catch (Exception e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INTERNAL, e.getMessage());
             responseObserver.onError(statusException);
         }
@@ -304,7 +278,6 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
     public void consultarPrestamoDetallePagos(QueryPrestamo request, io.grpc.stub.StreamObserver<ResponsePrestamoDetallePagos> responseObserver) {
         LOG.info("Inicia consultarPrestamoDetallePagos por GRPC");
         try {
-
             validator.validarPrestamoQuery(request);
             List<PrestamoDetallePagosType> prestamoListType = prestamoService.consultarPrestamoDetallePagos(Integer.parseInt(request.getNumeroPrestamo()));
 
@@ -333,12 +306,9 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
             responseObserver.onCompleted();
 
         } catch (ApplicationExceptionValidation e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INVALID_ARGUMENT, e.getMessage());
             responseObserver.onError(statusException);
-
         } catch (Exception e) {
-
             StatusException statusException = responseExceptionGrpc(Status.INTERNAL, e.getMessage());
             responseObserver.onError(statusException);
         }
@@ -349,7 +319,6 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
     public void consultarPrestamoCondonado(QueryPrestamo request, io.grpc.stub.StreamObserver<ResponsePrestamoCondonado> responseObserver) {
         LOG.info("Inicia consultarPrestamoCondonado por GRPC");
         try {
-
             validator.validarPrestamoQuery(request);
             List<PrestamoCondonadoType> prestamoListType = prestamoService.consultarPrestamoCondonado(Integer.parseInt(request.getNumeroPrestamo()));
 
@@ -400,11 +369,12 @@ public class PrestamoGrpcController extends PrestamoServiceGrpcGrpc.PrestamoServ
 
     private StatusException responseExceptionGrpc(Status statusCode, String exceptionMessage) {
 
-        LOG.error(exceptionMessage + "Exception: " + exceptionMessage);
+        LOG.error(exceptionMessage + "Excepción: " + exceptionMessage);
 
         Metadata metadata = new Metadata();
         metadata.put(Metadata.Key.of("Error: ", Metadata.ASCII_STRING_MARSHALLER), exceptionMessage);
 
         return statusCode.asException(metadata);
     }
+
 }

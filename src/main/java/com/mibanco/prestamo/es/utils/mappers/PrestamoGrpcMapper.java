@@ -27,19 +27,6 @@ public class PrestamoGrpcMapper {
         return JsonFormat.printer().print(messageOrBuilder);
     }
 
-
-    public Integer queryClienteGrpcToEntity(String grpc) {
-        return new ModelMapper().map(grpc, Integer.class);
-    }
-
-    public Integer queryPrestamoGrpcToEntity(QueryPrestamo grpc) {
-        return new ModelMapper().map(grpc, Integer.class);
-    }
-
-    public Integer queryPrestamoCuotaGrpcToEntity(QueryPrestamoCuota grpc) {
-        return new ModelMapper().map(grpc, Integer.class);
-    }
-
     public Prestamo clienteCdtToGrpc(PrestamoType clienteCDTDigitalType) throws IOException {
         Prestamo.Builder structBuilder = Prestamo.newBuilder();
         JsonFormat.parser().ignoringUnknownFields().merge(this.obj.toJson(clienteCDTDigitalType), structBuilder);

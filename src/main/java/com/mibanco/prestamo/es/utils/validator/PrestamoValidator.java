@@ -1,7 +1,7 @@
 package com.mibanco.prestamo.es.utils.validator;
 
 import com.mibanco.prestamo.es.QueryPrestamo;
-import com.mibanco.prestamo.es.constans.Constans;
+import com.mibanco.prestamo.es.constants.Constants;
 import com.mibanco.prestamo.es.gen.type.PrestamoType;
 import com.mibanco.prestamo.es.QueryCliente;
 import com.mibanco.prestamo.es.utils.exceptions.ApplicationExceptionValidation;
@@ -18,54 +18,18 @@ import java.beans.PropertyDescriptor;
 @ApplicationScoped
 public class PrestamoValidator {
 
-    public static final Logger logger = LoggerFactory.getLogger(PrestamoValidator.class);
-
-    private String msmError = "";
-
-    public void verificarPrestamo(PrestamoType prestamoType) throws ApplicationExceptionValidation {
-
-        if (validarObjeto(prestamoType)) {
-            throw new ApplicationExceptionValidation(
-                    Response.Status.BAD_REQUEST.getStatusCode(), Constans.SERVICIO_INTERNAL + msmError + " obligatorios"
-            );
-        }
-    }
-
-    public boolean validarObjeto(Object obj) {
-        boolean isValidateSuccess = true;
-        try {
-            BeanInfo bean = Introspector.getBeanInfo(obj.getClass());
-            PropertyDescriptor[] descripcionDePropiedades = bean.getPropertyDescriptors();
-
-            for (PropertyDescriptor atr : descripcionDePropiedades) {
-                Object valor = atr.getReadMethod().invoke(obj);
-                if (valor == null) {
-                    isValidateSuccess = false;
-                }
-            }
-        } catch (IntrospectionException | ReflectiveOperationException e) {
-            logger.error(e.getMessage());
-        }
-
-        if (!isValidateSuccess) {
-            msmError = "Se encontro datos nulos o vacios, verifique los datos";
-        }
-
-        return !isValidateSuccess;
-    }
-
     public void validarPrestamoQuery(QueryPrestamo numeroPrestamo) {
         if (numeroPrestamo == null) {
             throw new ApplicationExceptionValidation(
-                    Response.Status.BAD_REQUEST.getStatusCode(), Constans.SERVICIO_INTERNAL + "numeroCliente no puede ser nulo"
+                    Response.Status.BAD_REQUEST.getStatusCode(), Constants.SERVICIO_INTERNAL + "número Cliente no puede ser nulo"
             );
         }
     }
 
-    public void validarPrestamoQueryCiente(QueryCliente numeroCliente) {
+    public void validarPrestamoQueryCliente(QueryCliente numeroCliente) {
         if (numeroCliente == null) {
             throw new ApplicationExceptionValidation(
-                    Response.Status.BAD_REQUEST.getStatusCode(), Constans.SERVICIO_INTERNAL + "numeroCliente no puede ser nulo"
+                    Response.Status.BAD_REQUEST.getStatusCode(), Constants.SERVICIO_INTERNAL + "número Cliente no puede ser nulo"
             );
         }
     }
@@ -73,7 +37,7 @@ public class PrestamoValidator {
     public void validarConsulta(Integer numeroCliente) {
         if (numeroCliente == null) {
             throw new ApplicationExceptionValidation(
-                    Response.Status.BAD_REQUEST.getStatusCode(), Constans.VALIDACION + " numero de Cliente, valor no debe ser nulo."
+                    Response.Status.BAD_REQUEST.getStatusCode(), Constants.VALIDACION + " número de Cliente, valor no debe ser nulo."
             );
         }
     }

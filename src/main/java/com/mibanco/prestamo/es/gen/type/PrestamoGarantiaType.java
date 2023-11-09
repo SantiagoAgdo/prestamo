@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoGarantiaType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-11-09T17:27:24.039318-05:00[America/Bogota]")
 public class PrestamoGarantiaType   {
   private @Valid TipoGarantiaEnum tipoGarantia;
   private @Valid String subtipoGarantia;
@@ -54,28 +54,29 @@ public class PrestamoGarantiaType   {
 
   @JsonProperty("SubtipoGarantia")
   public void setSubtipoGarantia(String subtipoGarantia) {
-    this.subtipoGarantia = subtipoGarantia;
+      this.subtipoGarantia = subtipoGarantia;
   }
 
-  /**
-   **/
-  public PrestamoGarantiaType avaluo(Integer avaluo) {
-    this.avaluo = avaluo;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoGarantiaType avaluo(Integer avaluo) {
+        this.avaluo = avaluo;
+        return this;
+    }
 
 
     @JsonProperty("avaluo")
-  public Integer getAvaluo() {
-    return avaluo;
-  }
+    public Integer getAvaluo() {
+        return avaluo;
+    }
 
-  @JsonProperty("avaluo")
-  public void setAvaluo(Integer avaluo) {
-    this.avaluo = avaluo;
-  }
+    @JsonProperty("avaluo")
+    public void setAvaluo(Integer avaluo) {
+        this.avaluo = avaluo;
+    }
 
-  /**
+    /**
    **/
   public PrestamoGarantiaType referencia(String referencia) {
     this.referencia = referencia;

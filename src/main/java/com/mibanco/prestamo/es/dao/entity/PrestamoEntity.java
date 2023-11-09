@@ -1,6 +1,7 @@
 package com.mibanco.prestamo.es.dao.entity;
 
 import com.mibanco.prestamo.es.gen.type.SubProductoEnum;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@RegisterForReflection
 public class PrestamoEntity {
     public String condicionPrestamo;
     public Integer diasMoraActual;

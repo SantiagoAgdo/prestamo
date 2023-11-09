@@ -12,8 +12,6 @@ public interface IPrestamoDao {
     List<PrestamoGarantiaEntity> consultarPrestamoGarantiaOutput(Integer numeroCliente);
     List<PrestamoOtroTitularEntity> consultarPrestamoOtroTitular(Integer numeroCliente);
     List<PrestamoPlanDePagosEntity> consultarPrestamoPlanDePagos(Integer numeroCliente);
-
     List<PrestamoPlanDePagosOtroCargoEntity> consultarPrestamoPlanDePagosOtroCargo(Integer numeroCliente);
-
     List<PrestamoPorPagarEntity> consultarPrestamoPorPagar(Integer numeroCliente);
 }

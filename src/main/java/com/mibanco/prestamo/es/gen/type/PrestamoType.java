@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-11-09T17:27:24.039318-05:00[America/Bogota]")
 public class PrestamoType {
     private @Valid String condicionPrestamo;
     private @Valid Integer diasMoraActual;
@@ -25,15 +25,15 @@ public class PrestamoType {
     private @Valid Integer montoDesembolsado;
     private @Valid Integer numeroCliente;
     private @Valid String numeroPrestamo;
-  private @Valid Integer plazo;
-  private @Valid String prestamoCondonado;
-  private @Valid String prestamoDetallePagos;
-  private @Valid String prestamoGarantia;
-  private @Valid String prestamoOtroTitular;
-  private @Valid String prestamoPlanDePagos;
-  private @Valid String prestamoPorPagar;
-  private @Valid Integer saldoActual;
-  private @Valid SubProductoEnum subProducto;
+    private @Valid Integer plazo;
+    private @Valid String prestamoCondonado;
+    private @Valid String prestamoDetallePagos;
+    private @Valid String prestamoGarantia;
+    private @Valid String prestamoOtroTitular;
+    private @Valid String prestamoPlanDePagos;
+    private @Valid String prestamoPorPagar;
+    private @Valid Integer saldoActual;
+    private @Valid SubProductoEnum subProducto;
 
   /**
    **/
@@ -122,64 +122,67 @@ public class PrestamoType {
 
   @JsonProperty("estadoActualPrestamo")
   public void setEstadoActualPrestamo(String estadoActualPrestamo) {
-    this.estadoActualPrestamo = estadoActualPrestamo;
+      this.estadoActualPrestamo = estadoActualPrestamo;
   }
 
-  /**
-   **/
-  public PrestamoType fechaDesembolso(String fechaDesembolso) {
-    this.fechaDesembolso = fechaDesembolso;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoType fechaDesembolso(String fechaDesembolso) {
+        this.fechaDesembolso = fechaDesembolso;
+        return this;
+    }
 
 
     @JsonProperty("fechaDesembolso")
-  public String getFechaDesembolso() {
-    return fechaDesembolso;
-  }
+    public String getFechaDesembolso() {
+        return fechaDesembolso;
+    }
 
-  @JsonProperty("fechaDesembolso")
-  public void setFechaDesembolso(String fechaDesembolso) {
-    this.fechaDesembolso = fechaDesembolso;
-  }
+    @JsonProperty("fechaDesembolso")
+    public void setFechaDesembolso(String fechaDesembolso) {
+        this.fechaDesembolso = fechaDesembolso;
+    }
 
-  /**
-   **/
-  public PrestamoType fechaUltimoPago(String fechaUltimoPago) {
-    this.fechaUltimoPago = fechaUltimoPago;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoType fechaUltimoPago(String fechaUltimoPago) {
+        this.fechaUltimoPago = fechaUltimoPago;
+        return this;
+    }
 
 
     @JsonProperty("fechaUltimoPago")
-  public String getFechaUltimoPago() {
-    return fechaUltimoPago;
-  }
+    public String getFechaUltimoPago() {
+        return fechaUltimoPago;
+    }
 
-  @JsonProperty("fechaUltimoPago")
-  public void setFechaUltimoPago(String fechaUltimoPago) {
-    this.fechaUltimoPago = fechaUltimoPago;
-  }
+    @JsonProperty("fechaUltimoPago")
+    public void setFechaUltimoPago(String fechaUltimoPago) {
+        this.fechaUltimoPago = fechaUltimoPago;
+    }
 
-  /**
-   **/
-  public PrestamoType montoDesembolsado(Integer montoDesembolsado) {
-    this.montoDesembolsado = montoDesembolsado;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoType montoDesembolsado(Integer montoDesembolsado) {
+        this.montoDesembolsado = montoDesembolsado;
+        return this;
+    }
 
 
     @JsonProperty("montoDesembolsado")
-  public Integer getMontoDesembolsado() {
-    return montoDesembolsado;
-  }
+    public Integer getMontoDesembolsado() {
+        return montoDesembolsado;
+    }
 
-  @JsonProperty("montoDesembolsado")
-  public void setMontoDesembolsado(Integer montoDesembolsado) {
-    this.montoDesembolsado = montoDesembolsado;
-  }
+    @JsonProperty("montoDesembolsado")
+    public void setMontoDesembolsado(Integer montoDesembolsado) {
+        this.montoDesembolsado = montoDesembolsado;
+    }
 
-  /**
+    /**
    **/
   public PrestamoType numeroCliente(Integer numeroCliente) {
     this.numeroCliente = numeroCliente;
@@ -338,25 +341,26 @@ public class PrestamoType {
 
   @JsonProperty("prestamoPorPagar")
   public void setPrestamoPorPagar(String prestamoPorPagar) {
-    this.prestamoPorPagar = prestamoPorPagar;
+      this.prestamoPorPagar = prestamoPorPagar;
   }
 
-  /**
-   **/
-  public PrestamoType saldoActual(Integer saldoActual) {
-    this.saldoActual = saldoActual;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoType saldoActual(Integer saldoActual) {
+        this.saldoActual = saldoActual;
+        return this;
+    }
 
 
     @JsonProperty("saldoActual")
-  public Integer getSaldoActual() {
-    return saldoActual;
-  }
+    public Integer getSaldoActual() {
+        return saldoActual;
+    }
 
-  @JsonProperty("saldoActual")
-  public void setSaldoActual(Integer saldoActual) {
-    this.saldoActual = saldoActual;
+    @JsonProperty("saldoActual")
+    public void setSaldoActual(Integer saldoActual) {
+        this.saldoActual = saldoActual;
   }
 
   /**

@@ -12,8 +12,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoPlanDePagosOtroCargoType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
-public class PrestamoPlanDePagosOtroCargoType   {
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-11-09T17:27:24.039318-05:00[America/Bogota]")
+public class PrestamoPlanDePagosOtroCargoType {
     private @Valid String numeroPrestamo;
     private @Valid Integer valor;
     private @Valid String descripcionCargo;
@@ -47,14 +47,14 @@ public class PrestamoPlanDePagosOtroCargoType   {
 
 
     @JsonProperty("valor")
-  public Integer getValor() {
-    return valor;
-  }
+    public Integer getValor() {
+        return valor;
+    }
 
-  @JsonProperty("valor")
-  public void setValor(Integer valor) {
-    this.valor = valor;
-  }
+    @JsonProperty("valor")
+    public void setValor(Integer valor) {
+        this.valor = valor;
+    }
 
     /**
      *
@@ -83,16 +83,16 @@ public class PrestamoPlanDePagosOtroCargoType   {
         }
         if (o == null || getClass() != o.getClass()) {
             return false;
-    }
-    PrestamoPlanDePagosOtroCargoType prestamoPlanDePagosOtroCargoType = (PrestamoPlanDePagosOtroCargoType) o;
+        }
+        PrestamoPlanDePagosOtroCargoType prestamoPlanDePagosOtroCargoType = (PrestamoPlanDePagosOtroCargoType) o;
         return Objects.equals(this.numeroPrestamo, prestamoPlanDePagosOtroCargoType.numeroPrestamo) &&
                 Objects.equals(this.valor, prestamoPlanDePagosOtroCargoType.valor) &&
                 Objects.equals(this.descripcionCargo, prestamoPlanDePagosOtroCargoType.descripcionCargo);
-  }
+    }
 
-  @Override
-  public int hashCode() {
-      return Objects.hash(numeroPrestamo, valor, descripcionCargo);
+    @Override
+    public int hashCode() {
+        return Objects.hash(numeroPrestamo, valor, descripcionCargo);
   }
 
   @Override

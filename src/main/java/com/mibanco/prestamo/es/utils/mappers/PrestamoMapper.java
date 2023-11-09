@@ -35,6 +35,7 @@ public class PrestamoMapper {
     public PrestamoPlanDePagosOtroCargoType prestamoPlanDePagosOtroToType(PrestamoPlanDePagosOtroCargoEntity entity) {
         return new ModelMapper().map(entity, PrestamoPlanDePagosOtroCargoType.class);
     }
+
     public PrestamoPorPagarType prestamoPorPagarToType(PrestamoPorPagarEntity entity) {
         return new ModelMapper().map(entity, PrestamoPorPagarType.class);
     }

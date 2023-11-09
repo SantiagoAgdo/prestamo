@@ -1,5 +1,6 @@
 package com.mibanco.prestamo.es.dao.entity;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@RegisterForReflection
 public class PrestamoPorPagarEntity {
 
     public Integer numeroCuota;

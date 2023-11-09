@@ -3,26 +3,26 @@ servers:
   - description: Index swagger
     url: https://api.mibanco.com.co
 info:
-  description: Servicios de entidad gestion de prestamos.
+  description: Servicios de entidad gestión de préstamos.
   version: 0.0.1
-  title: Prestamos_ES
+  title: Préstamos_ES
   contact:
     name: MiBanco
     url: https://www.mibanco.com.co/
     email: api@mibanco.com.co
   license:
     name: GNU GPLv3
-    url: ‘https://www.gnu.org/licenses/gpl-3.0.html’
+    url: 'https://www.gnu.org/licenses/gpl-3.0.html'
 tags:
-  - name: Prestamos
-    description: Gestion de prestamos
+  - name: Préstamos
+    description: Gestión de préstamos
 #----------------------------
 #Endpoints del Entidad
 #----------------------------
 paths:
   /v1/es/prestamo-fic/{numeroCliente}:
     get:
-      summary: Consulta prestamo
+      summary: Consulta préstamo
       operationId: consultarPrestamo
       parameters:
         - in: path
@@ -30,10 +30,10 @@ paths:
           required: true
           schema:
             type: integer
-          description: numero de cliente
+          description: número de cliente
       responses:
         "200":
-          description: get prestamo.
+          description: obtener préstamo.
           content:
             application/json:
               schema:
@@ -41,22 +41,22 @@ paths:
                 items:
                   $ref: "#/components/schemas/PrestamoType"
         "400":
-          description: Peticion con datos invalidos
+          description: Petición con datos inválidos
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
         "404":
-          description: "No se encontro datos de prestamo"
+          description: "No se encontró datos de préstamo"
         default:
-          description: Unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /v1/es/prestamo-fic/condonado/{numeroPrestamo}:
     get:
-      summary: Consulta prestamo condonado
+      summary: Consulta préstamo condonado
       operationId: consultarPrestamoCondonado
       parameters:
         - in: path
@@ -64,10 +64,10 @@ paths:
           required: true
           schema:
             type: integer
-          description: numero de cliente
+          description: número de cliente
       responses:
         "200":
-          description: get prestamo.
+          description: obtener préstamo.
           content:
             application/json:
               schema:
@@ -75,15 +75,15 @@ paths:
                 items:
                   $ref: "#/components/schemas/PrestamoCondonadoType"
         "400":
-          description: Peticion con datos invalidos
+          description: Petición con datos inválidos
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
         "404":
-          description: "No se encontro datos de prestamo"
+          description: "No se encontró datos de préstamo"
         default:
-          description: Unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
@@ -98,10 +98,10 @@ paths:
           required: true
           schema:
             type: integer
-          description: numero de cliente
+          description: número de cliente
       responses:
         "200":
-          description: get prestamo.
+          description: obtener préstamo.
           content:
             application/json:
               schema:
@@ -109,22 +109,22 @@ paths:
                 items:
                   $ref: "#/components/schemas/PrestamoDetallePagosType"
         "400":
-          description: Peticion con datos invalidos
+          description: Petición con datos inválidos
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
         "404":
-          description: "No se encontro datos de prestamo"
+          description: "No se encontró datos de préstamo"
         default:
-          description: Unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /v1/es/prestamo-fic/garantia/{numeroPrestamo}:
     get:
-      summary: Consulta prestamo garantia
+      summary: Consulta préstamo garantía
       operationId: consultarPrestamoGarantia
       parameters:
         - in: path
@@ -132,10 +132,10 @@ paths:
           required: true
           schema:
             type: integer
-          description: numero de cliente
+          description: número de cliente
       responses:
         "200":
-          description: get prestamo.
+          description: obtener préstamo.
           content:
             application/json:
               schema:
@@ -143,22 +143,22 @@ paths:
                 items:
                   $ref: "#/components/schemas/PrestamoGarantiaType"
         "400":
-          description: Peticion con datos invalidos
+          description: Petición con datos inválidos
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
         "404":
-          description: "No se encontro datos de prestamo"
+          description: "No se encontró datos de préstamo"
         default:
-          description: Unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /v1/es/prestamo-fic/otro-titular/{numeroPrestamo}:
     get:
-      summary: Consulta prestamo otro titular
+      summary: Consulta préstamo otro titular
       operationId: consultarPrestamoOtroTitular
       parameters:
         - in: path
@@ -166,10 +166,10 @@ paths:
           required: true
           schema:
             type: integer
-          description: numero de cliente
+          description: número de cliente
       responses:
         "200":
-          description: get prestamo.
+          description: obtener préstamo.
           content:
             application/json:
               schema:
@@ -177,22 +177,22 @@ paths:
                 items:
                   $ref: "#/components/schemas/PrestamoOtroTitularType"
         "400":
-          description: Peticion con datos invalidos
+          description: Petición con datos inválidos
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
         "404":
-          description: "No se encontro datos de prestamo"
+          description: "No se encontró datos de préstamo"
         default:
-          description: Unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /v1/es/prestamo-fic/plan-pagos/{numeroPrestamo}:
     get:
-      summary: Consulta prestamo plan de pagos
+      summary: Consulta préstamo plan de pagos
       operationId: consultarPrestamoPlanDePagos
       parameters:
         - in: path
@@ -200,10 +200,10 @@ paths:
           required: true
           schema:
             type: integer
-          description: numero de cliente
+          description: número de cliente
       responses:
         "200":
-          description: get prestamo.
+          description: obtener préstamo.
           content:
             application/json:
               schema:
@@ -211,22 +211,22 @@ paths:
                 items:
                   $ref: "#/components/schemas/PrestamoPlanDePagosType"
         "400":
-          description: Peticion con datos invalidos
+          description: Petición con datos inválidos
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
         "404":
-          description: "No se encontro datos de prestamo"
+          description: "No se encontró datos de préstamo"
         default:
-          description: Unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /v1/es/prestamo-fic/otro-cargo/{numeroPrestamo}:
     get:
-      summary: Consulta prestamo plan de pagos otro cargo
+      summary: Consulta préstamo plan de pagos otro cargo
       operationId: consultarPrestamoPlanDePagosOtroCargo
       parameters:
         - in: path
@@ -234,10 +234,10 @@ paths:
           required: true
           schema:
             type: integer
-          description: numero de prestamo
+          description: número de préstamo
       responses:
         "200":
-          description: get prestamo.
+          description: obtener préstamo.
           content:
             application/json:
               schema:
@@ -245,22 +245,22 @@ paths:
                 items:
                   $ref: "#/components/schemas/PrestamoPlanDePagosOtroCargoType"
         "400":
-          description: Peticion con datos invalidos
+          description: Petición con datos inválidos
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
         "404":
-          description: "No se encontro datos de prestamo"
+          description: "No se encontró datos de préstamo"
         default:
-          description: Unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
   /v1/es/prestamo-fic/pendiente/pago/{numeroPrestamo}:
     get:
-      summary: Consulta prestamo por pagar
+      summary: Consulta préstamo por pagar
       operationId: consultarPrestamoPorPagar
       parameters:
         - in: path
@@ -268,10 +268,10 @@ paths:
           required: true
           schema:
             type: integer
-          description: numero de prestamo
+          description: número de préstamo
       responses:
         "200":
-          description: get prestamo.
+          description: obtener préstamo.
           content:
             application/json:
               schema:
@@ -279,21 +279,19 @@ paths:
                 items:
                   $ref: "#/components/schemas/PrestamoPorPagarType"
         "400":
-          description: Peticion con datos invalidos
+          description: Petición con datos inválidos
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
         "404":
-          description: "No se encontro datos de prestamo"
+          description: "No se encontró datos de préstamo"
         default:
-          description: Unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-
-
 
 #---------------------------------------------
 #Se declaran los Modelos/Schemas del servicio

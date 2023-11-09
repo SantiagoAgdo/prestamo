@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoPlanDePagosType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-11-09T17:27:24.039318-05:00[America/Bogota]")
 public class PrestamoPlanDePagosType {
     private @Valid Integer numeroCuota;
     private @Valid String fechaAPagar;
@@ -24,16 +24,17 @@ public class PrestamoPlanDePagosType {
     private @Valid String estado;
     private @Valid Integer diasVencidos;
     private @Valid String fechaPago;
-  private @Valid Integer montoPagado;
-  private @Valid String prestamoPlanDePagosOtroCargo;
-  private @Valid String numeroPrestamo;
+    private @Valid Integer montoPagado;
+    private @Valid String prestamoPlanDePagosOtroCargo;
+    private @Valid String numeroPrestamo;
 
-  /**
-   **/
-  public PrestamoPlanDePagosType numeroCuota(Integer numeroCuota) {
-    this.numeroCuota = numeroCuota;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType numeroCuota(Integer numeroCuota) {
+        this.numeroCuota = numeroCuota;
+        return this;
+    }
 
   
   @JsonProperty("numeroCuota")
@@ -43,116 +44,122 @@ public class PrestamoPlanDePagosType {
 
   @JsonProperty("numeroCuota")
   public void setNumeroCuota(Integer numeroCuota) {
-    this.numeroCuota = numeroCuota;
+      this.numeroCuota = numeroCuota;
   }
 
-  /**
-   **/
-  public PrestamoPlanDePagosType fechaAPagar(String fechaAPagar) {
-    this.fechaAPagar = fechaAPagar;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType fechaAPagar(String fechaAPagar) {
+        this.fechaAPagar = fechaAPagar;
+        return this;
+    }
 
 
     @JsonProperty("fechaAPagar")
-  public String getFechaAPagar() {
-    return fechaAPagar;
-  }
+    public String getFechaAPagar() {
+        return fechaAPagar;
+    }
 
-  @JsonProperty("fechaAPagar")
-  public void setFechaAPagar(String fechaAPagar) {
-    this.fechaAPagar = fechaAPagar;
-  }
+    @JsonProperty("fechaAPagar")
+    public void setFechaAPagar(String fechaAPagar) {
+        this.fechaAPagar = fechaAPagar;
+    }
 
-  /**
-   **/
-  public PrestamoPlanDePagosType abonoACapital(Integer abonoACapital) {
-    this.abonoACapital = abonoACapital;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType abonoACapital(Integer abonoACapital) {
+        this.abonoACapital = abonoACapital;
+        return this;
+    }
 
 
     @JsonProperty("abonoACapital")
-  public Integer getAbonoACapital() {
-    return abonoACapital;
-  }
+    public Integer getAbonoACapital() {
+        return abonoACapital;
+    }
 
-  @JsonProperty("abonoACapital")
-  public void setAbonoACapital(Integer abonoACapital) {
-    this.abonoACapital = abonoACapital;
-  }
+    @JsonProperty("abonoACapital")
+    public void setAbonoACapital(Integer abonoACapital) {
+        this.abonoACapital = abonoACapital;
+    }
 
-  /**
-   **/
-  public PrestamoPlanDePagosType intereses(Integer intereses) {
-    this.intereses = intereses;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType intereses(Integer intereses) {
+        this.intereses = intereses;
+        return this;
+    }
 
 
     @JsonProperty("intereses")
-  public Integer getIntereses() {
-    return intereses;
-  }
+    public Integer getIntereses() {
+        return intereses;
+    }
 
-  @JsonProperty("intereses")
-  public void setIntereses(Integer intereses) {
-    this.intereses = intereses;
-  }
+    @JsonProperty("intereses")
+    public void setIntereses(Integer intereses) {
+        this.intereses = intereses;
+    }
 
-  /**
-   **/
-  public PrestamoPlanDePagosType otrosCargos(Integer otrosCargos) {
-    this.otrosCargos = otrosCargos;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType otrosCargos(Integer otrosCargos) {
+        this.otrosCargos = otrosCargos;
+        return this;
+    }
 
 
     @JsonProperty("otrosCargos")
-  public Integer getOtrosCargos() {
-    return otrosCargos;
-  }
+    public Integer getOtrosCargos() {
+        return otrosCargos;
+    }
 
-  @JsonProperty("otrosCargos")
-  public void setOtrosCargos(Integer otrosCargos) {
-    this.otrosCargos = otrosCargos;
-  }
+    @JsonProperty("otrosCargos")
+    public void setOtrosCargos(Integer otrosCargos) {
+        this.otrosCargos = otrosCargos;
+    }
 
-  /**
-   **/
-  public PrestamoPlanDePagosType totalCuota(Integer totalCuota) {
-    this.totalCuota = totalCuota;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType totalCuota(Integer totalCuota) {
+        this.totalCuota = totalCuota;
+        return this;
+    }
 
 
     @JsonProperty("totalCuota")
-  public Integer getTotalCuota() {
-    return totalCuota;
-  }
+    public Integer getTotalCuota() {
+        return totalCuota;
+    }
 
-  @JsonProperty("totalCuota")
-  public void setTotalCuota(Integer totalCuota) {
-    this.totalCuota = totalCuota;
-  }
+    @JsonProperty("totalCuota")
+    public void setTotalCuota(Integer totalCuota) {
+        this.totalCuota = totalCuota;
+    }
 
-  /**
-   **/
-  public PrestamoPlanDePagosType saldo(Integer saldo) {
-    this.saldo = saldo;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType saldo(Integer saldo) {
+        this.saldo = saldo;
+        return this;
+    }
 
 
     @JsonProperty("saldo")
-  public Integer getSaldo() {
-    return saldo;
-  }
+    public Integer getSaldo() {
+        return saldo;
+    }
 
-  @JsonProperty("saldo")
-  public void setSaldo(Integer saldo) {
-    this.saldo = saldo;
-  }
+    @JsonProperty("saldo")
+    public void setSaldo(Integer saldo) {
+        this.saldo = saldo;
+    }
 
   /**
    **/
@@ -187,42 +194,44 @@ public class PrestamoPlanDePagosType {
 
   @JsonProperty("diasVencidos")
   public void setDiasVencidos(Integer diasVencidos) {
-    this.diasVencidos = diasVencidos;
+      this.diasVencidos = diasVencidos;
   }
 
-  /**
-   **/
-  public PrestamoPlanDePagosType fechaPago(String fechaPago) {
-    this.fechaPago = fechaPago;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType fechaPago(String fechaPago) {
+        this.fechaPago = fechaPago;
+        return this;
+    }
 
 
     @JsonProperty("fechaPago")
-  public String getFechaPago() {
-    return fechaPago;
-  }
+    public String getFechaPago() {
+        return fechaPago;
+    }
 
-  @JsonProperty("fechaPago")
-  public void setFechaPago(String fechaPago) {
-    this.fechaPago = fechaPago;
-  }
+    @JsonProperty("fechaPago")
+    public void setFechaPago(String fechaPago) {
+        this.fechaPago = fechaPago;
+    }
 
-  /**
-   **/
-  public PrestamoPlanDePagosType montoPagado(Integer montoPagado) {
-    this.montoPagado = montoPagado;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPlanDePagosType montoPagado(Integer montoPagado) {
+        this.montoPagado = montoPagado;
+        return this;
+    }
 
 
     @JsonProperty("montoPagado")
-  public Integer getMontoPagado() {
-    return montoPagado;
-  }
+    public Integer getMontoPagado() {
+        return montoPagado;
+    }
 
-  @JsonProperty("montoPagado")
-  public void setMontoPagado(Integer montoPagado) {
+    @JsonProperty("montoPagado")
+    public void setMontoPagado(Integer montoPagado) {
     this.montoPagado = montoPagado;
   }
 

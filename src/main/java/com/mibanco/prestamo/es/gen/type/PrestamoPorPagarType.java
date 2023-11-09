@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("PrestamoPorPagarType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-10-24T11:20:07.335286-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-11-09T17:27:24.039318-05:00[America/Bogota]")
 public class PrestamoPorPagarType {
     private @Valid Integer numeroCuota;
     private @Valid String fechaAPagar;
@@ -24,15 +24,15 @@ public class PrestamoPorPagarType {
     private @Valid Integer seguroVida;
     private @Valid Integer seguroAdicional;
     private @Valid Integer leyMipymeLeyMipymeIVA;
-  private @Valid Integer comisionComisionIVA;
-  private @Valid Integer GACGACIVA;
-  private @Valid Integer gastoExtraJudicialGastoExtraJudicialIVA;
-  private @Valid Integer gastoExtraDiferidoGastoExtraDiferidoIVA;
-  private @Valid Integer totalCuota;
-  private @Valid String estado;
-  private @Valid String fechaPago;
-  private @Valid Integer diasVencidos;
-  private @Valid String numeroPrestamo;
+    private @Valid Integer comisionComisionIVA;
+    private @Valid Integer GACGACIVA;
+    private @Valid Integer gastoExtraJudicialGastoExtraJudicialIVA;
+    private @Valid Integer gastoExtraDiferidoGastoExtraDiferidoIVA;
+    private @Valid Integer totalCuota;
+    private @Valid String estado;
+    private @Valid String fechaPago;
+    private @Valid Integer diasVencidos;
+    private @Valid String numeroPrestamo;
 
   /**
    **/
@@ -49,262 +49,276 @@ public class PrestamoPorPagarType {
 
   @JsonProperty("numeroCuota")
   public void setNumeroCuota(Integer numeroCuota) {
-    this.numeroCuota = numeroCuota;
+      this.numeroCuota = numeroCuota;
   }
 
-  /**
-   **/
-  public PrestamoPorPagarType fechaAPagar(String fechaAPagar) {
-    this.fechaAPagar = fechaAPagar;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType fechaAPagar(String fechaAPagar) {
+        this.fechaAPagar = fechaAPagar;
+        return this;
+    }
 
 
     @JsonProperty("fechaAPagar")
-  public String getFechaAPagar() {
-    return fechaAPagar;
-  }
+    public String getFechaAPagar() {
+        return fechaAPagar;
+    }
 
-  @JsonProperty("fechaAPagar")
-  public void setFechaAPagar(String fechaAPagar) {
-    this.fechaAPagar = fechaAPagar;
-  }
+    @JsonProperty("fechaAPagar")
+    public void setFechaAPagar(String fechaAPagar) {
+        this.fechaAPagar = fechaAPagar;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType abonoACapital(Integer abonoACapital) {
-    this.abonoACapital = abonoACapital;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType abonoACapital(Integer abonoACapital) {
+        this.abonoACapital = abonoACapital;
+        return this;
+    }
 
 
     @JsonProperty("abonoACapital")
-  public Integer getAbonoACapital() {
-    return abonoACapital;
-  }
+    public Integer getAbonoACapital() {
+        return abonoACapital;
+    }
 
-  @JsonProperty("abonoACapital")
-  public void setAbonoACapital(Integer abonoACapital) {
-    this.abonoACapital = abonoACapital;
-  }
+    @JsonProperty("abonoACapital")
+    public void setAbonoACapital(Integer abonoACapital) {
+        this.abonoACapital = abonoACapital;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType interesesCteBalance(Integer interesesCteBalance) {
-    this.interesesCteBalance = interesesCteBalance;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType interesesCteBalance(Integer interesesCteBalance) {
+        this.interesesCteBalance = interesesCteBalance;
+        return this;
+    }
 
 
     @JsonProperty("interesesCteBalance")
-  public Integer getInteresesCteBalance() {
-    return interesesCteBalance;
-  }
+    public Integer getInteresesCteBalance() {
+        return interesesCteBalance;
+    }
 
-  @JsonProperty("interesesCteBalance")
-  public void setInteresesCteBalance(Integer interesesCteBalance) {
-    this.interesesCteBalance = interesesCteBalance;
-  }
+    @JsonProperty("interesesCteBalance")
+    public void setInteresesCteBalance(Integer interesesCteBalance) {
+        this.interesesCteBalance = interesesCteBalance;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType interesesCteContingente(Integer interesesCteContingente) {
-    this.interesesCteContingente = interesesCteContingente;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType interesesCteContingente(Integer interesesCteContingente) {
+        this.interesesCteContingente = interesesCteContingente;
+        return this;
+    }
 
 
     @JsonProperty("interesesCteContingente")
-  public Integer getInteresesCteContingente() {
-    return interesesCteContingente;
-  }
+    public Integer getInteresesCteContingente() {
+        return interesesCteContingente;
+    }
 
-  @JsonProperty("interesesCteContingente")
-  public void setInteresesCteContingente(Integer interesesCteContingente) {
-    this.interesesCteContingente = interesesCteContingente;
-  }
+    @JsonProperty("interesesCteContingente")
+    public void setInteresesCteContingente(Integer interesesCteContingente) {
+        this.interesesCteContingente = interesesCteContingente;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType interesesMoraBalance(Integer interesesMoraBalance) {
-    this.interesesMoraBalance = interesesMoraBalance;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType interesesMoraBalance(Integer interesesMoraBalance) {
+        this.interesesMoraBalance = interesesMoraBalance;
+        return this;
+    }
 
 
     @JsonProperty("interesesMoraBalance")
-  public Integer getInteresesMoraBalance() {
-    return interesesMoraBalance;
-  }
+    public Integer getInteresesMoraBalance() {
+        return interesesMoraBalance;
+    }
 
-  @JsonProperty("interesesMoraBalance")
-  public void setInteresesMoraBalance(Integer interesesMoraBalance) {
-    this.interesesMoraBalance = interesesMoraBalance;
-  }
+    @JsonProperty("interesesMoraBalance")
+    public void setInteresesMoraBalance(Integer interesesMoraBalance) {
+        this.interesesMoraBalance = interesesMoraBalance;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType interesesMoraContingente(Integer interesesMoraContingente) {
-    this.interesesMoraContingente = interesesMoraContingente;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType interesesMoraContingente(Integer interesesMoraContingente) {
+        this.interesesMoraContingente = interesesMoraContingente;
+        return this;
+    }
 
 
     @JsonProperty("interesesMoraContingente")
-  public Integer getInteresesMoraContingente() {
-    return interesesMoraContingente;
-  }
+    public Integer getInteresesMoraContingente() {
+        return interesesMoraContingente;
+    }
 
-  @JsonProperty("interesesMoraContingente")
-  public void setInteresesMoraContingente(Integer interesesMoraContingente) {
-    this.interesesMoraContingente = interesesMoraContingente;
-  }
+    @JsonProperty("interesesMoraContingente")
+    public void setInteresesMoraContingente(Integer interesesMoraContingente) {
+        this.interesesMoraContingente = interesesMoraContingente;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType seguroVida(Integer seguroVida) {
-    this.seguroVida = seguroVida;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType seguroVida(Integer seguroVida) {
+        this.seguroVida = seguroVida;
+        return this;
+    }
 
 
     @JsonProperty("seguroVida")
-  public Integer getSeguroVida() {
-    return seguroVida;
-  }
+    public Integer getSeguroVida() {
+        return seguroVida;
+    }
 
-  @JsonProperty("seguroVida")
-  public void setSeguroVida(Integer seguroVida) {
-    this.seguroVida = seguroVida;
-  }
+    @JsonProperty("seguroVida")
+    public void setSeguroVida(Integer seguroVida) {
+        this.seguroVida = seguroVida;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType seguroAdicional(Integer seguroAdicional) {
-    this.seguroAdicional = seguroAdicional;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType seguroAdicional(Integer seguroAdicional) {
+        this.seguroAdicional = seguroAdicional;
+        return this;
+    }
 
 
     @JsonProperty("seguroAdicional")
-  public Integer getSeguroAdicional() {
-    return seguroAdicional;
-  }
+    public Integer getSeguroAdicional() {
+        return seguroAdicional;
+    }
 
-  @JsonProperty("seguroAdicional")
-  public void setSeguroAdicional(Integer seguroAdicional) {
-    this.seguroAdicional = seguroAdicional;
-  }
+    @JsonProperty("seguroAdicional")
+    public void setSeguroAdicional(Integer seguroAdicional) {
+        this.seguroAdicional = seguroAdicional;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType leyMipymeLeyMipymeIVA(Integer leyMipymeLeyMipymeIVA) {
-    this.leyMipymeLeyMipymeIVA = leyMipymeLeyMipymeIVA;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType leyMipymeLeyMipymeIVA(Integer leyMipymeLeyMipymeIVA) {
+        this.leyMipymeLeyMipymeIVA = leyMipymeLeyMipymeIVA;
+        return this;
+    }
 
 
     @JsonProperty("leyMipymeLeyMipymeIVA")
-  public Integer getLeyMipymeLeyMipymeIVA() {
-    return leyMipymeLeyMipymeIVA;
-  }
+    public Integer getLeyMipymeLeyMipymeIVA() {
+        return leyMipymeLeyMipymeIVA;
+    }
 
-  @JsonProperty("leyMipymeLeyMipymeIVA")
-  public void setLeyMipymeLeyMipymeIVA(Integer leyMipymeLeyMipymeIVA) {
-    this.leyMipymeLeyMipymeIVA = leyMipymeLeyMipymeIVA;
-  }
+    @JsonProperty("leyMipymeLeyMipymeIVA")
+    public void setLeyMipymeLeyMipymeIVA(Integer leyMipymeLeyMipymeIVA) {
+        this.leyMipymeLeyMipymeIVA = leyMipymeLeyMipymeIVA;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType comisionComisionIVA(Integer comisionComisionIVA) {
-    this.comisionComisionIVA = comisionComisionIVA;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType comisionComisionIVA(Integer comisionComisionIVA) {
+        this.comisionComisionIVA = comisionComisionIVA;
+        return this;
+    }
 
 
     @JsonProperty("comisionComisionIVA")
-  public Integer getComisionComisionIVA() {
-    return comisionComisionIVA;
-  }
+    public Integer getComisionComisionIVA() {
+        return comisionComisionIVA;
+    }
 
-  @JsonProperty("comisionComisionIVA")
-  public void setComisionComisionIVA(Integer comisionComisionIVA) {
-    this.comisionComisionIVA = comisionComisionIVA;
-  }
+    @JsonProperty("comisionComisionIVA")
+    public void setComisionComisionIVA(Integer comisionComisionIVA) {
+        this.comisionComisionIVA = comisionComisionIVA;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType GACGACIVA(Integer GACGACIVA) {
-    this.GACGACIVA = GACGACIVA;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType GACGACIVA(Integer GACGACIVA) {
+        this.GACGACIVA = GACGACIVA;
+        return this;
+    }
 
 
     @JsonProperty("GACGACIVA")
-  public Integer getGACGACIVA() {
-    return GACGACIVA;
-  }
+    public Integer getGACGACIVA() {
+        return GACGACIVA;
+    }
 
-  @JsonProperty("GACGACIVA")
-  public void setGACGACIVA(Integer GACGACIVA) {
-    this.GACGACIVA = GACGACIVA;
-  }
+    @JsonProperty("GACGACIVA")
+    public void setGACGACIVA(Integer GACGACIVA) {
+        this.GACGACIVA = GACGACIVA;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType gastoExtraJudicialGastoExtraJudicialIVA(Integer gastoExtraJudicialGastoExtraJudicialIVA) {
-    this.gastoExtraJudicialGastoExtraJudicialIVA = gastoExtraJudicialGastoExtraJudicialIVA;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType gastoExtraJudicialGastoExtraJudicialIVA(Integer gastoExtraJudicialGastoExtraJudicialIVA) {
+        this.gastoExtraJudicialGastoExtraJudicialIVA = gastoExtraJudicialGastoExtraJudicialIVA;
+        return this;
+    }
 
 
     @JsonProperty("gastoExtraJudicialGastoExtraJudicialIVA")
-  public Integer getGastoExtraJudicialGastoExtraJudicialIVA() {
-    return gastoExtraJudicialGastoExtraJudicialIVA;
-  }
+    public Integer getGastoExtraJudicialGastoExtraJudicialIVA() {
+        return gastoExtraJudicialGastoExtraJudicialIVA;
+    }
 
-  @JsonProperty("gastoExtraJudicialGastoExtraJudicialIVA")
-  public void setGastoExtraJudicialGastoExtraJudicialIVA(Integer gastoExtraJudicialGastoExtraJudicialIVA) {
-    this.gastoExtraJudicialGastoExtraJudicialIVA = gastoExtraJudicialGastoExtraJudicialIVA;
-  }
+    @JsonProperty("gastoExtraJudicialGastoExtraJudicialIVA")
+    public void setGastoExtraJudicialGastoExtraJudicialIVA(Integer gastoExtraJudicialGastoExtraJudicialIVA) {
+        this.gastoExtraJudicialGastoExtraJudicialIVA = gastoExtraJudicialGastoExtraJudicialIVA;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType gastoExtraDiferidoGastoExtraDiferidoIVA(Integer gastoExtraDiferidoGastoExtraDiferidoIVA) {
-    this.gastoExtraDiferidoGastoExtraDiferidoIVA = gastoExtraDiferidoGastoExtraDiferidoIVA;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType gastoExtraDiferidoGastoExtraDiferidoIVA(Integer gastoExtraDiferidoGastoExtraDiferidoIVA) {
+        this.gastoExtraDiferidoGastoExtraDiferidoIVA = gastoExtraDiferidoGastoExtraDiferidoIVA;
+        return this;
+    }
 
 
     @JsonProperty("gastoExtraDiferidoGastoExtraDiferidoIVA")
-  public Integer getGastoExtraDiferidoGastoExtraDiferidoIVA() {
-    return gastoExtraDiferidoGastoExtraDiferidoIVA;
-  }
+    public Integer getGastoExtraDiferidoGastoExtraDiferidoIVA() {
+        return gastoExtraDiferidoGastoExtraDiferidoIVA;
+    }
 
-  @JsonProperty("gastoExtraDiferidoGastoExtraDiferidoIVA")
-  public void setGastoExtraDiferidoGastoExtraDiferidoIVA(Integer gastoExtraDiferidoGastoExtraDiferidoIVA) {
-    this.gastoExtraDiferidoGastoExtraDiferidoIVA = gastoExtraDiferidoGastoExtraDiferidoIVA;
-  }
+    @JsonProperty("gastoExtraDiferidoGastoExtraDiferidoIVA")
+    public void setGastoExtraDiferidoGastoExtraDiferidoIVA(Integer gastoExtraDiferidoGastoExtraDiferidoIVA) {
+        this.gastoExtraDiferidoGastoExtraDiferidoIVA = gastoExtraDiferidoGastoExtraDiferidoIVA;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType totalCuota(Integer totalCuota) {
-    this.totalCuota = totalCuota;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType totalCuota(Integer totalCuota) {
+        this.totalCuota = totalCuota;
+        return this;
+    }
 
 
     @JsonProperty("totalCuota")
-  public Integer getTotalCuota() {
-    return totalCuota;
-  }
+    public Integer getTotalCuota() {
+        return totalCuota;
+    }
 
-  @JsonProperty("totalCuota")
-  public void setTotalCuota(Integer totalCuota) {
-    this.totalCuota = totalCuota;
-  }
+    @JsonProperty("totalCuota")
+    public void setTotalCuota(Integer totalCuota) {
+        this.totalCuota = totalCuota;
+    }
 
-  /**
+    /**
    **/
   public PrestamoPorPagarType estado(String estado) {
     this.estado = estado;
@@ -314,25 +328,26 @@ public class PrestamoPorPagarType {
   
   @JsonProperty("estado")
   public String getEstado() {
-    return estado;
+      return estado;
   }
 
-  @JsonProperty("estado")
-  public void setEstado(String estado) {
-    this.estado = estado;
-  }
+    @JsonProperty("estado")
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
-  /**
-   **/
-  public PrestamoPorPagarType fechaPago(String fechaPago) {
-    this.fechaPago = fechaPago;
-    return this;
-  }
+    /**
+     *
+     **/
+    public PrestamoPorPagarType fechaPago(String fechaPago) {
+        this.fechaPago = fechaPago;
+        return this;
+    }
 
 
     @JsonProperty("fechaPago")
-  public String getFechaPago() {
-    return fechaPago;
+    public String getFechaPago() {
+        return fechaPago;
   }
 
   @JsonProperty("fechaPago")
@@ -383,28 +398,28 @@ public class PrestamoPorPagarType {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
-      return false;
+        return false;
     }
-    PrestamoPorPagarType prestamoPorPagarType = (PrestamoPorPagarType) o;
-    return Objects.equals(this.numeroCuota, prestamoPorPagarType.numeroCuota) &&
-            Objects.equals(this.fechaAPagar, prestamoPorPagarType.fechaAPagar) &&
-            Objects.equals(this.abonoACapital, prestamoPorPagarType.abonoACapital) &&
-            Objects.equals(this.interesesCteBalance, prestamoPorPagarType.interesesCteBalance) &&
-            Objects.equals(this.interesesCteContingente, prestamoPorPagarType.interesesCteContingente) &&
-            Objects.equals(this.interesesMoraBalance, prestamoPorPagarType.interesesMoraBalance) &&
-            Objects.equals(this.interesesMoraContingente, prestamoPorPagarType.interesesMoraContingente) &&
-            Objects.equals(this.seguroVida, prestamoPorPagarType.seguroVida) &&
-            Objects.equals(this.seguroAdicional, prestamoPorPagarType.seguroAdicional) &&
-            Objects.equals(this.leyMipymeLeyMipymeIVA, prestamoPorPagarType.leyMipymeLeyMipymeIVA) &&
-            Objects.equals(this.comisionComisionIVA, prestamoPorPagarType.comisionComisionIVA) &&
-            Objects.equals(this.GACGACIVA, prestamoPorPagarType.GACGACIVA) &&
-            Objects.equals(this.gastoExtraJudicialGastoExtraJudicialIVA, prestamoPorPagarType.gastoExtraJudicialGastoExtraJudicialIVA) &&
-            Objects.equals(this.gastoExtraDiferidoGastoExtraDiferidoIVA, prestamoPorPagarType.gastoExtraDiferidoGastoExtraDiferidoIVA) &&
-            Objects.equals(this.totalCuota, prestamoPorPagarType.totalCuota) &&
-            Objects.equals(this.estado, prestamoPorPagarType.estado) &&
-            Objects.equals(this.fechaPago, prestamoPorPagarType.fechaPago) &&
-            Objects.equals(this.diasVencidos, prestamoPorPagarType.diasVencidos) &&
-            Objects.equals(this.numeroPrestamo, prestamoPorPagarType.numeroPrestamo);
+      PrestamoPorPagarType prestamoPorPagarType = (PrestamoPorPagarType) o;
+      return Objects.equals(this.numeroCuota, prestamoPorPagarType.numeroCuota) &&
+              Objects.equals(this.fechaAPagar, prestamoPorPagarType.fechaAPagar) &&
+              Objects.equals(this.abonoACapital, prestamoPorPagarType.abonoACapital) &&
+              Objects.equals(this.interesesCteBalance, prestamoPorPagarType.interesesCteBalance) &&
+              Objects.equals(this.interesesCteContingente, prestamoPorPagarType.interesesCteContingente) &&
+              Objects.equals(this.interesesMoraBalance, prestamoPorPagarType.interesesMoraBalance) &&
+              Objects.equals(this.interesesMoraContingente, prestamoPorPagarType.interesesMoraContingente) &&
+              Objects.equals(this.seguroVida, prestamoPorPagarType.seguroVida) &&
+              Objects.equals(this.seguroAdicional, prestamoPorPagarType.seguroAdicional) &&
+              Objects.equals(this.leyMipymeLeyMipymeIVA, prestamoPorPagarType.leyMipymeLeyMipymeIVA) &&
+              Objects.equals(this.comisionComisionIVA, prestamoPorPagarType.comisionComisionIVA) &&
+              Objects.equals(this.GACGACIVA, prestamoPorPagarType.GACGACIVA) &&
+              Objects.equals(this.gastoExtraJudicialGastoExtraJudicialIVA, prestamoPorPagarType.gastoExtraJudicialGastoExtraJudicialIVA) &&
+              Objects.equals(this.gastoExtraDiferidoGastoExtraDiferidoIVA, prestamoPorPagarType.gastoExtraDiferidoGastoExtraDiferidoIVA) &&
+              Objects.equals(this.totalCuota, prestamoPorPagarType.totalCuota) &&
+              Objects.equals(this.estado, prestamoPorPagarType.estado) &&
+              Objects.equals(this.fechaPago, prestamoPorPagarType.fechaPago) &&
+              Objects.equals(this.diasVencidos, prestamoPorPagarType.diasVencidos) &&
+        Objects.equals(this.numeroPrestamo, prestamoPorPagarType.numeroPrestamo);
   }
 
   @Override
