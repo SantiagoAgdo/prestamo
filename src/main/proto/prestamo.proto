@@ -3,7 +3,7 @@ syntax = "proto3";
 //Configs
 
 option java_multiple_files = true;
-option java_package = "com.mibanco.prestamo.es";
+option java_package = "com.mibanco.prestamofic.es";
 option java_outer_classname = "PrestamoGRPC";
 
 package PrestamoGRPC;
@@ -79,12 +79,9 @@ message PrestamoPlanDePagosOtroCargo{
 message  PrestamoOtroTitular{
   string tipoDocumento = 1;
   string numeroDocumento = 2;
-  string primerNombre = 3;
-  string segundoNombre = 4;
-  string primerApellido = 5;
-  string segundoApellido = 6;
-  string tipoTitular = 7;
-  string numeroPrestamo = 8;
+  string nombre = 3;
+  string tipoTitular = 4;
+  string numeroPrestamo = 5;
 }
 
 message PrestamoGarantia{

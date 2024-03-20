@@ -3,8 +3,8 @@ servers:
   - description: Index swagger
     url: https://api.mibanco.com.co
 info:
-  description: Servicios de entidad gestión de préstamos.
-  version: 0.0.1
+  description: Servicio de entidad gestión de préstamos.
+  version: 1.0.0
   title: Préstamos_ES
   contact:
     name: MiBanco
@@ -25,6 +25,34 @@ paths:
       summary: Consulta préstamo
       operationId: consultarPrestamo
       parameters:
+        - in: header
+          name: jwt
+          description: bearerToken de seguridad
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: Inicia con uno la paginación
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1
+          style: form
+          explode: false
+        - in: query
+          name: pageSize
+          description: Total de registro para mostrar
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 3000
+          style: form
+          explode: false
         - in: path
           name: numeroCliente
           required: true
@@ -59,12 +87,39 @@ paths:
       summary: Consulta préstamo condonado
       operationId: consultarPrestamoCondonado
       parameters:
+        - in: header
+          name: jwt
+          description: bearerToken de seguridad
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: Inicia con uno la paginación
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1
+          style: form
+          explode: false
+        - in: query
+          name: pageSize
+          description: Total de registro para mostrar
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1000
         - in: path
           name: numeroPrestamo
           required: true
           schema:
-            type: integer
-          description: número de cliente
+            type: number
+            format: decimal
+          description: condonado
       responses:
         "200":
           description: obtener préstamo.
@@ -91,14 +146,41 @@ paths:
   /v1/es/prestamo-fic/detalle-pagos/cliente/{numeroPrestamo}:
     get:
       summary: Consulta detalle pagos
-      operationId: PrestamoDetallePagos
+      operationId: ConsultarPrestamoDetallePagos
       parameters:
+        - in: header
+          name: jwt
+          description: bearerToken de seguridad
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: Inicia con uno la paginación
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1
+          style: form
+          explode: false
+        - in: query
+          name: pageSize
+          description: Total de registro para mostrar
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1000
         - in: path
           name: numeroPrestamo
           required: true
           schema:
-            type: integer
-          description: número de cliente
+            type: number
+            format: decimal
+          description: Detalle Pagos
       responses:
         "200":
           description: obtener préstamo.
@@ -127,11 +209,38 @@ paths:
       summary: Consulta préstamo garantía
       operationId: consultarPrestamoGarantia
       parameters:
+        - in: header
+          name: jwt
+          description: bearerToken de seguridad
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: Inicia con uno la paginación
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1
+          style: form
+          explode: false
+        - in: query
+          name: pageSize
+          description: Total de registro para mostrar
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1000
         - in: path
           name: numeroPrestamo
           required: true
           schema:
-            type: integer
+            type: number
+            format: decimal
           description: número de cliente
       responses:
         "200":
@@ -161,11 +270,38 @@ paths:
       summary: Consulta préstamo otro titular
       operationId: consultarPrestamoOtroTitular
       parameters:
+        - in: header
+          name: jwt
+          description: bearerToken de seguridad
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: Inicia con uno la paginación
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1
+          style: form
+          explode: false
+        - in: query
+          name: pageSize
+          description: Total de registro para mostrar
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1000
         - in: path
           name: numeroPrestamo
           required: true
           schema:
-            type: integer
+            type: number
+            format: decimal
           description: número de cliente
       responses:
         "200":
@@ -195,11 +331,38 @@ paths:
       summary: Consulta préstamo plan de pagos
       operationId: consultarPrestamoPlanDePagos
       parameters:
+        - in: header
+          name: jwt
+          description: bearerToken de seguridad
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: Inicia con uno la paginación
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1
+          style: form
+          explode: false
+        - in: query
+          name: pageSize
+          description: Total de registro para mostrar
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1000
         - in: path
           name: numeroPrestamo
           required: true
           schema:
-            type: integer
+            type: number
+            format: decimal
           description: número de cliente
       responses:
         "200":
@@ -224,16 +387,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /v1/es/prestamo-fic/otro-cargo/{numeroPrestamo}:
+  /v1/es/prestamo-fic/plan-pagos/otro-cargo/{numeroPrestamo}:
     get:
       summary: Consulta préstamo plan de pagos otro cargo
       operationId: consultarPrestamoPlanDePagosOtroCargo
       parameters:
+        - in: header
+          name: jwt
+          description: bearerToken de seguridad
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: Inicia con uno la paginación
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1
+          style: form
+          explode: false
+        - in: query
+          name: pageSize
+          description: Total de registro para mostrar
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1000
         - in: path
           name: numeroPrestamo
           required: true
           schema:
-            type: integer
+            type: number
+            format: decimal
           description: número de préstamo
       responses:
         "200":
@@ -263,11 +453,38 @@ paths:
       summary: Consulta préstamo por pagar
       operationId: consultarPrestamoPorPagar
       parameters:
+        - in: header
+          name: jwt
+          description: bearerToken de seguridad
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: Inicia con uno la paginación
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1
+          style: form
+          explode: false
+        - in: query
+          name: pageSize
+          description: Total de registro para mostrar
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 1000
         - in: path
           name: numeroPrestamo
           required: true
           schema:
-            type: integer
+            type: number
+            format: decimal
           description: número de préstamo
       responses:
         "200":
@@ -292,11 +509,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-
 #---------------------------------------------
 #Se declaran los Modelos/Schemas del servicio
 #---------------------------------------------
-
 components:
   schemas:
     #    TYPES
@@ -348,7 +563,7 @@ components:
           type: integer
           format: float
         subProducto:
-          $ref: "#/components/schemas/SubProductoEnum"
+          type: string
     PrestamoCondonadoType:
       type: object
       properties:
@@ -467,16 +682,10 @@ components:
           $ref: "#/components/schemas/TipoDocumentoEnum"
         numeroDocumento:
           type: string
-        primerNombre:
-          type: string
-        segundoNombre:
-          type: string
-        primerApellido:
-          type: string
-        segundoApellido:
+        nombre:
           type: string
         tipoTitular:
-          $ref: "#/components/schemas/TipoTitularEnum"
+          type: string
         numeroPrestamo:
           type: string
     PrestamoPlanDePagosType:
@@ -598,17 +807,705 @@ components:
     SubProductoEnum:
       type: string
       enum:
-        - REMA AAFC APORTES AFC - CENTRALIZADO
-        - REMA AARL APORTES ARL - CENTRALIZADO
-        - REMC ABOG ANTICIPO ABOGADOS - CENTRALIZADO
-        - REMA AFP AFP PENSIONES - CENTRALIZADO
-        - REMC ANTC ANTICIPOS LABORALES - CENTRALIZADO
-        - GRFG ASDI GARANTIA ASDI
-        - REMC AUTO FALTANTE EN CAJERO AUTOMATICO - OFICINAS
-        - REMA BDEG SEGURO BIENES DADOS EN GRTIA  - CENTRALIZADO
-        - BONO BN01 BONO < 18 MESES DTF
-        - BONO BN02 BONO > 18 MESES DTF
-        - BONO BN03 BONO < 18 MESES IBR
+        - APORTES AFC - CENTRALIZADO
+        - APORTES ARL - CENTRALIZADO
+        - ANTICIPO ABOGADOS - CENTRALIZADO
+        - AFP PENSIONES - CENTRALIZADO
+        - ANTICIPOS LABORALES - CENTRALIZADO
+        - GARANTIA ASDI
+        - FALTANTE EN CAJERO AUTOMATICO - OFICINAS
+        - SEGURO BIENES DADOS EN GRTIA  - CENTRALIZADO
+        - BONO < 18 MESES DTF
+        - BONO > 18 MESES DTF
+        - BONO < 18 MESES IBR
+        - BONO > 18 MESES IBR
+        - BONO < 18 MESES IPC
+        - BONO > 18 MESES IPC
+        - BONOS ORDINARIOS 2
+        - BONOS ORDINARIOS
+        - BONOS ORD VINCU EXT
+        - BONOS ORD VINCU NACI
+        - BANQUERITO PROPOSITO
+        - BANQUERITO TRADICIONAL
+        - CDT MENOS DE 180 DÍAS
+        - CDT MENOS DE 360 DÍAS
+        - CDT MENOS DE 540 DÍAS
+        - CDT MÁS DE 540 DÍAS
+        - CARTERA DE CREDITOS - CENTRALIZADO
+        - CUENTAS AHORRO TRAMITE SIMPLIFICADO
+        - CORRESPONSAL BANCARIO
+        - CUENTA CORRIENTE CHEQUES DE GERENCIA
+        - CUENTA CTE REMUNERADA PN
+        - COMERCIAL OTRAS CXC CASTIGADAS
+        - COMERCIAL AJUSTADO
+        - CREDIAMERICA
+        - CREDIPREMIUM
+        - CREDITO INDIVIDUAL
+        - TEMPORADA
+        - DESENDEUDESE
+        - EXTRACUPO
+        - INDIVIDUAL RURAL
+        - REMODELACION
+        - VICTIMAS DEL CONFLICTO FINAGRO
+        - VEHICULO
+        - VICTIMAS DE CONFLICTO ARMADO BANCOLDEX
+        - CREDITO PERSONAL
+        - VOLVER A CASA
+        - PEQUEÑA EMPRESA
+        - CUPO ROTATIVO EMPRESAS BANCOMPARTIR
+        - GRAN MICROEMPRESARIO
+        - CADENA PRODUCTIVA
+        - COMERCIAL POLIZA VEHICULO
+        - COMERCIAL MIGRADO ROTATIVO
+        - TOMALO YA
+        - COM CAPITAL DE TRABAJO MIGRA ENCUMBRA
+        - COM ACTIVO FIJO MIGRA ENCUMBRA
+        - COM MEJORA DE VIVIENDA MIGRA ENCUMBRA
+        - COM COMPRA DE DEUDA MIGRA ENCUMBRA
+        - COM CREDIAGIL MIGRA ENCUMBRA
+        - COM EXTRARAPIDO MIGRA ENCUMBRA
+        - COM LIBRE DISPONIBILIDAD MIGRA ENCUMBRA
+        - CAPITAL DE TRABAJO
+        - CAPITAL DE TRABAJO AGROPECUARIO
+        - ACTIVO FIJO
+        - ACTIVO FIJO AGROPECUARIO
+        - ÚNICA DEUDA
+        - SIEMPRE JUNTOS
+        - EXTRACUPO
+        - ALIVIOS FINANCIEROS
+        - CREDITO COMERCIAL PERSONA
+        - COMERCIAL PRUEBA
+        - AL INSTANTE NR UTILIZACIONES COMERCIAL
+        - REVOLVENTE COMERCIAL
+        - CREDIPREMIUM
+        - DESENDEUDESE
+        - REMODELACION
+        - VEHICULO
+        - VOLVER A CREER
+        - CONSUMO MICROFINANZAS
+        - VOLVER A CASA
+        - BANCOMPARTIR U
+        - ORDINARIO
+        - FINANCIACION EQUIPOS TELEFONIA CELULAR
+        - LIBRANZA
+        - ROTATIVO FE
+        - CONSUMO POLIZA VEHICULO
+        - CONSUMO MIGRADO ROTATIVO
+        - EX LIBRANZA
+        - TOMALO YA
+        - CONSU LIBRE DISPONIBILIDAD MIGRA ENCUMBRA
+        - SIEMPRE JUNTOS
+        - ALIVIOS FINANCIEROS
+        - CRESER
+        - CIUDADANO MIBANCO
+        - CRÉDITO EXCIUDADANOS MIBANCO
+        - CONSUMO AL INSTANTE
+        - CONSUMO PRUEBA
+        - AL INSTANTE NR UTILIZACIONES CONSUMO
+        - REVOLVENTE  CONSUMO
+        - COMISIONES - CENTRALIZADO
+        - COMPADRE
+        - CONCENTRACION DE CUENTAS
+        - CONSUMO OTRAS CXC CASTIGADAS
+        - CORRESPONSALES
+        - PROGRAMADO VIVIENDA
+        - CUENTA CTE REMUNERADA PJ
+        - CORRESPONSALES SIN MORA
+        - CDT DIGITAL TYBA MENOS DE 180 DIAS
+        - CDT DIGITAL TYBA MENOS DE 360 DIAS
+        - CDT DIGITAL TYBA MENOS DE 540 DIAS
+        - CDT DIGITAL TYBA MAS DE 540 DIAS
+        - DEVOLUCIÓN DE COMISIÓN FNG
+        - DEPOSITO DE BAJO MONTO
+        - DEVOLUCIONES DE SALDOS
+        - SEGURO DE VIDA DEUDORES - CENTRALIZADO
+        - DEVOLUCION SEGUROS - CENTRALIZADO
+        - CUENTAS POR COBRAR DIV.OTRAS - CENTRALIZADO
+        - DIVERSAS - CENTRALIZADO
+        - REDESCUENTO FINAGRO
+        - REDESCUENTO BANCOLDEX LEY DE VICTIMAS
+        - REDESCUENTO FINDETER
+        - REDESCUENTO BANCOLDEX MOCOA
+        - CDTS DTF MENOS DE 540
+        - CDTS DTF DESDE 540 DIAS
+        - CDTE RE MENOS DE 180 DIAS
+        - CDTE RE MENOS DE 360 DIAS
+        - CDTE RE MENOS DE 540 DIAS
+        - CDTE RE DE 540 DIAS Y MAS
+        - ENCUMBRA-FNG EMP001 - COBER 25%
+        - ENCUMBRA-FNG EMP001 - COBER 40%
+        - ENCUMBRA-FNG EMP001 - COBER 50%
+        - ENCUMBRA-FNG EMP023 - COBER 50%
+        - ENCUMBRA-FNG EMP023 - COBER 60%
+        - ENCUMBRA-FNG EMP023 - COBER 70%
+        - ENCUMBRA-FNG EMP023 - COBER 80%
+        - ENCUMBRA-FNG EMP201 - COBER 60%
+        - ENCUMBRA-FNG EMP201 - COBER 70%
+        - ENCUMBRA-FNG EMP201 - COBER 80%
+        - ENCUMBRA-FNG EMP219 - COBER 50%
+        - ENCUMBRA-FNG EMP219 - COBER 60%
+        - ENCUMBRA-FNG EMP219 - COBER 70%
+        - ENCUMBRA-FNG EMP123 - COBER 40%
+        - ENCUMBRA-FNG EMP123 - COBER 50%
+        - ENCUMBRA-FNG EMP101 - COBER 25%
+        - ENCUMBRA-FNG EMP101 - COBER 40%
+        - ENCUMBRA-FNG EMP101 - COBER 50%
+        - ENCUMBRA-FNG EMP023 - COBER 40%
+        - ENTIDADES OFICIALES
+        - EPS SALUD - CENTRALIZADO
+        - FALTANTE EN CAJA - CENTRALIZADO
+        - FONDO NACIONAL CAPITAL DE TRABAJO 70%
+        - FONDOS DE GARANTIAS - CENTRALIZADO
+        - GASTOS JUDICIALES - CENTRALIZADO
+        - FONDO AGROPECUARIO DE GARANTIAS
+        - FONDO DE GARANTIAS DE ANTIOQUIA
+        - FNG EMP001 COMERCIAL MULTIPROPOSITO
+        - FONDO NACIONAL DE GARANTIAS EMP223
+        - FONDO NACIONAL DE GARANTIAS EMP225
+        - FONDO NACIONAL DE GARANTIAS EMP226
+        - FONDO NACIONAL DE GARANTIAS EMP023
+        - FNG MULTIPROPOSITO EMP001 COB 25%
+        - FNG MULTIPROPOSITO EMP001 COB 40%
+        - FNG MULTIPROPOSITO EMP001 COB 50%
+        - FNG PARA MUJERES EMP323 COB 60%
+        - FONDO NACIONAL DE GARANTIAS EMP219
+        - FONDO REGIONAL DE GARANTIAS
+        - GARANTIA HIPOTECARIA ABIERTA
+        - FONDO NACIONAL CAPITAL DE TRABAJO 80%
+        - FONDO NACIONAL DE GARANTIAS EMP224
+        - FONDO NACIONAL DE GARANTIAS EMP023
+        - GARANTIA FONDO NOMINA
+        - PRENDARIA MAQUINARIA Y EQUIPO
+        - PRENDARIA VEHICULO
+        - USAID MIGRANTES
+        - USAID AGENCIA DE LOS ESTADOS UNIDOS PARA E
+        - GARANTIA VIVIENDA HIPOTECARIA
+        - GASTOS DE VIAJE - CENTRALIZADO
+        - HONORARIOS - CENTRALIZADO
+        - GASTOS ALIMENTAC Y HOSPEDAJE - CENTRALIZADO
+        - CDT MENOS DE 180 DIAS IBR
+        - CDT MENOS DE 360 DIAS IBR
+        - CDT MENOS DE 540 DIAS IBR
+        - CDT MAS DE 540 DIAS IBR
+        - INT CAUSADOS NO PAGADOS BONOS
+        - CIA VINCULADAS INT CAUSADOS NO PAGADOS
+        - INTERESES CDTS CAUSADOS NO PAGADOS
+        - CIA VINCULADAS INT CAUSADOS NO PAGADOS CDTS
+        - LIBRANZAS - CENTRALIZADO
+        - BANCOLDEX CREDITO DIRECTO
+        - BANCO POPULAR
+        - BANCO DE OCCIDENTE
+        - LIQUIDEZ BANCOLDEX ENCUMBRA
+        - LIQUIDEZ BCO BOGOTA ENCUMBRA
+        - LIQUIDEZ BANCOLOMBIA MIBANCO
+        - VINCULADOS CREDITO DIRECTO
+        - MANTENIMIENTO Y REPARACIONES - CENTRALIZADO
+        - CREDIAMERICA
+        - CREDIPREMIUM
+        - MICROCREDITO INDIVIDUAL
+        - TEMPORADA
+        - DESENDEUDESE
+        - EXTRACUPO
+        - PROSPERAR
+        - INDIVIDUAL RURAL
+        - REMODELACION
+        - VICTIMAS DEL CONFLICTO FINAGRO
+        - VEHICULO
+        - VICTIMAS DEL CONFLICTO BANCOLDEX
+        - VOLVER A CREER
+        - CREDITO PERSONAL
+        - VOLVER A CASA
+        - CUPO ROTATIVO EMPRESAS BANCOMPARTIR
+        - GRAN MICROEMPRESARIO
+        - CADENA PRODUCTIVA
+        - MICRO POLIZA VEHICULO
+        - MICRO MIGRADO ROTATIVO
+        - TOMALO YA
+        - MICRO CAPITAL DE TRABAJO MIGRA ENCUMBRA
+        - MICRO ACTIVO FIJO MIGRA ENCUMBRA
+        - MICRO MEJORA DE VIVIENDA MIGRA ENCUMBRA
+        - MICRO COMPRA DE DEUDA MIGRA ENCUMBRA
+        - MICRO CREDIAGIL MIGRA ENCUMBRA
+        - MICRO EXTRARAPIDO MIGRA ENCUMBRA
+        - MICRO LIBRE DISPONIBILIDAD MIGRA ENCUMBRA
+        - CAPITAL DE TRABAJO
+        - CAPITAL DE TRABAJO AGROPECUARIO
+        - ACTIVO FIJO
+        - ACTIVO FIJO AGROPECUARIO
+        - ÚNICA DEUDA
+        - SIEMPRE JUNTOS
+        - EXTRACUPO
+        - MUJERES PALANTE CAPITAL
+        - MUJERES PALANTE ACTIVO
+        - ALIVIOS FINANCIEROS
+        - MODIFICACION CONSOLIDADA MICRO
+        - POPULAR RURAL
+        - POPULAR RURAL AGROPECARIO
+        - PRODUCTIVO RURAL
+        - PRODUCTIVO RURAL AGROPECUARIO
+        - AL INSTANTE NR UTILIZACIONES MICRO AGRO
+        - CAMPA#A POLITICA
+        - MI CUENTA EN LINEA
+        - AL INSTANTE NR UTILIZACIONES MICROCREDITO
+        - MI CUENTA PJ
+        - MI CUENTA PN
+        - NO REVOLVENTE  MICROCREDITO POPULAR RURAL
+        - NO REVOLVENTE  MICROCREDITO PRODUCTIVO RURAL
+        - REVOLVENTE MICROCREDITO
+        - MICROCREDITO OTRAS CXC CASTIGADAS
+        - MILAGROSO
+        - ZONAS RURALES Y RURALES DISPERSAS
+        - CREDITO POPULAR PRODUCTIVO URBANO
+        - ZONAS RURALES Y RURALES DISPERSAS
+        - CDT VIN NAC MENOR 180 DIAS
+        - CDT VIN NAC MENOS DE 360 DIAS
+        - CDT VIN NAC MENOS DE 540 DIAS
+        - CDT VIN NAC MÁS DE 540 DÍAS
+        - CUENTA CTE NO REMUN PJ CON SOBREGIRO
+        - CUENTA CTE NO REMUN PN CON SOBREGIRO
+        - CUENTA CTE NO REMUN PJ SIN SOBREGIRO
+        - CUENTA CTE NO REMUN PN SIN SOBREGIRO
+        - SEGUROS OPCIONALES - CENTRALIZADO
+        - CERTIFICACIONES Y PAZ Y SALVOS - OFICINA
+        - CREDILINEA PRUEBA
+        - PAGADIARIO ENTIDADES OFICIALES
+        - PAGOS PENDIENTES DE APLICAR - OFICINAS
+        - NUBIA ROTATIVO
+        - PLAN COMPLEMENT Y PREPAGADAS - CENTRALIZADO
+        - PROPOSITO
+        - PROVEEDORES - CENTRALIZADO
+        - ANTICIPO PROVEEDORES - CENTRALIZADO
+        - AL INSTANTE NO REVOLVENTE COMERCIAL
+        - INSTANTE NO REVOLVENTE  MICROCREDITO
+        - AL INSTANTE REVOLVENTE COMERCIAL
+        - AL INSTANTE NO REVOLVENTE CONSUMO
+        - AL INSTANTE REVOLVENTE CONSUMO
+        - POLIZAS REMANENTES CONSUMO CAT A
+        - POLIZAS REMANENTES COMERCIAL CAT A
+        - POLIZAS REMANENTES MICROCREDITO CAT A
+        - POLIZAS REMANENTES CONSUMO CAT B
+        - POLIZAS REMANENTES COMERCIAL CAT B
+        - POLIZAS REMANENTES MICROCREDITO CAT B
+        - POLIZAS REMANENTES CONSUMO CAT C
+        - POLIZAS REMANENTES COMERCIAL CAT C
+        - POLIZAS REMANENTES MICROCREDITO CAT C
+        - POLIZAS REMANENTES CONSUMO CAT D
+        - POLIZAS REMANENTES COMERCIAL CAT D
+        - POLIZAS REMANENTES MICROCREDITO CAT D
+        - POLIZAS REMANENTES CONSUMO CAT E
+        - POLIZAS REMANENTES COMERCIAL CAT E
+        - POLIZAS REMANENTES MICROCREDITO CAT E
+        - AL INSTANTE NO REVOLVENTE  MICROCREDITO
+        - INSTANTE NO REVOLVENTE  MICROCREDITO
+        - AL INSTANTE REVOLVENTE  MICROCREDITO
+        - AL INST NO REVOLVENTE MICRO AGRO
+        - REMANENTES DE NEGOCIACIONES - CENTRALIZADO
+        - COMERCIAL ESPECIAL - ROTATIVO
+        - REMANTENTE POR BLOQUEO- COBRANZAS
+        - RETORNO SEGURO DEUDORES - CENTRALIZADO
+        - REINTEGRO ANTICIPOS
+        - SEGUROS REMANENTES
+        - REINTEGRO SEGURIDAD SOCIAL - CENTRALIZADO
+        - SERVICIOS - CENTRALIZADO
+        - SOBREGIRO COMERCIAL CONTRATADO
+        - SOBREGIRO COMERCIAL OCASIONAL
+        - SOBREGIRO CONSUMO OCASIONAL
+        - SOBREGIRO CONSUMO CONTRATADO
+        - CIERRE PRODUCTOS CRS
+        - TU MANO DERECHA PERSONA JURIDICA
+        - TU MANO DERECHA PERSONA NATURAL
+        - TU MANO DERECHA ENTIDADES OFICIALES
+        - SEGURO TODO RIESGO - CENTRALIZADO
+        - TRADICIONAL EMPRESA PJ
+        - GASTOS DE TRANSPORTE - CENTRALIZADO
+        - CDT VIN EXT MENOR 180 DIAS
+        - CDT VIN EXT MENOS DE 360 DIAS
+        - CDT VIN EXT MENOS DE 540 DIAS
+        - CDT VIN EXT MÁS DE 540 DÍAS
+        - SEGURO VEHICULO - CENTRALIZADO
+        - VIVIENDA VIS PESOS CUOTA FIJA CON SUBSIDIO
+        - VIVIENDA VIP PESOS CUOTA FIJA CON SUBSIDIO
+        - VIVIENDA NO VIS PESOS CUOTA FIJA CON SUBSIDIO
+        - VIVIENDA VIS UVR CUOTA FIJA CON SUBSIDIO
+        - VIVIENDA VIP UVR CUOTA FIJA CON SUBSIDIO
+        - VIVIENDA NO VIS UVR CUOTA FIJA CON SUBSIDIO
+        - VIVIENDA VIP PESOS CUOTA FIJA SIN SUBSIDIO
+        - VIVIENDA VIS PESOS CUOTA FIJA SIN SUBSIDIO
+        - VIVIENDA NO VIS PESOS CUOTA FIJA SIN SUBSIDIO
+        - VIVIENDA VIP UVR CUOTA FIJA SIN SUBSIDIO
+        - VIVIENDA VIS UVR CUOTA FIJA SIN SUBSIDIO
+        - VIVIENDA NO VIS UVR CUOTA FIJA SIN SUBSIDIO
+        - VIVIENDA VIS UVR CAPITAL CONSTANTE CON SUBSID
+        - VIVIENDA VIS UVR CAPITAL CONSTANTE SIN SUBSID
+        - VIVIENDA NO VIS UVR CAPITAL CONSTANTE CON SUB
+        - VIVIENDA NO VIS UVR CAPITAL CONSTANTE SIN SUB
+        - VIVIENDA VIP UVR CAPITAL CONSTANTE CON SUBSID
+        - VIVIENDA VIP UVR CAPITAL CONSTANTE SIN SUBSID
+        - VIVIENDA VIS UVR DECRECIENTE ANUAL CON SUBSID
+        - VIVIENDA VIS UVR DECRECIENTE ANUAL SIN SUBSID
+        - VIVIENDA NO VIS UVR DECRECIENTE ANUAL CON SUB
+        - VIVIENDA NO VIS UVR DECRECIENTE ANUAL SIN SUB
+        - VIVIENDA VIP UVR DECRECIENTE ANUAL CON SUBSID
+        - VIVIENDA VIP UVR DECRECIENTE ANUAL SIN SUBSID
+        - VIVIENDA VIS PESOS CAPITAL CONSTANTE CON SUBS
+        - VIVIENDA VIS PESOS CAPITAL CONSTANTE SIN SUBS
+        - VIVIENDA NO VIS PESOS CAP CONSTANTE CON SUBSI
+        - VIVIENDA NO VIS PESOS CAP CONSTANTE SIN SUBSI
+        - VIVIENDA VIP PESOS CAPITAL CONSTANTE CON SUBS
+        - VIVIENDA VIP PESOS CAPITAL CONSTANTE SIN SUBS
+        - VIVINEDA OTRAS CXC CASTIGADAS
+        - CDT MENOS DE 180 DÍAS
+        - BONOS ORDINARIOS
+      x-enum-varnames:
+        - AAFC
+        - AARL
+        - ABOG
+        - AFP
+        - ANTC
+        - ASDI
+        - AUTO
+        - BDEG
+        - BN01
+        - BN02
+        - BN03
+        - BN04
+        - BN05
+        - BN06
+        - BOR1
+        - BORD
+        - BORV
+        - BOVN
+        - BPRO
+        - BQRT
+        - C180
+        - C360
+        - C540
+        - C541
+        - CART
+        - CATS
+        - CB01
+        - CCCG
+        - CCRE
+        - CIAL
+        - CM00
+        - CM01
+        - CM02
+        - CM03
+        - CM04
+        - CM05
+        - CM06
+        - CM08
+        - CM09
+        - CM10
+        - CM11
+        - CM12
+        - CM14
+        - CM15
+        - CM16
+        - CM29
+        - CM30
+        - CM31
+        - CM55
+        - CM56
+        - CM58
+        - CM59
+        - CM60
+        - CM61
+        - CM62
+        - CM63
+        - CM64
+        - CM65
+        - CM66
+        - CM67
+        - CM68
+        - CM69
+        - CM70
+        - CM71
+        - CM72
+        - CM75
+        - CM76
+        - CM77
+        - CMNR
+        - CMRV
+        - CN02
+        - CN05
+        - CN09
+        - CN11
+        - CN13
+        - CN14
+        - CN15
+        - CN17
+        - CN18
+        - CN19
+        - CN21
+        - CN22
+        - CN55
+        - CN56
+        - CN57
+        - CN58
+        - CN65
+        - CN71
+        - CN75
+        - CN76
+        - CN77
+        - CN78
+        - CN80
+        - CN81
+        - CNNR
+        - CNRV
+        - COMI
+        - COMP
+        - CONC
+        - CONS
+        - CORR
+        - CPVI
+        - CRPN
+        - CRR2
+        - D180
+        - D360
+        - D540
+        - D541
+        - DCFG
+        - DEBJ
+        - DESA
+        - DEUD
+        - DEVO
+        - DIVE
+        - DIVR
+        - DS01
+        - DS02
+        - DS03
+        - DS04
+        - DTF1
+        - DTF2
+        - E180
+        - E360
+        - E540
+        - E541
+        - EN01
+        - EN02
+        - EN03
+        - EN04
+        - EN05
+        - EN06
+        - EN07
+        - EN08
+        - EN09
+        - EN10
+        - EN11
+        - EN12
+        - EN13
+        - EN14
+        - EN15
+        - EN16
+        - EN17
+        - EN18
+        - EN19
+        - ENOF
+        - EPS
+        - FALT
+        - FNCT
+        - FOND
+        - GAST
+        - GFAG
+        - GFGA
+        - GFM1
+        - GFN1
+        - GFN3
+        - GFN4
+        - GFN5
+        - GFN6
+        - GFN7
+        - GFN8
+        - GFN9
+        - GFNG
+        - GFRG
+        - GHIP
+        - GNCT
+        - GNF2
+        - GNF5
+        - GNOM
+        - GPME
+        - GPVH
+        - GUS2
+        - GUSA
+        - GVIV
+        - GVJE
+        - HONO
+        - HOSP
+        - I180
+        - I360
+        - I540
+        - I541
+        - IBON
+        - IBOV
+        - ICDT
+        - ICDV
+        - LIBR
+        - LQ01
+        - LQ02
+        - LQ03
+        - LQ04
+        - LQ05
+        - LQ06
+        - LQ07
+        - MANT
+        - MC01
+        - MC02
+        - MC03
+        - MC04
+        - MC05
+        - MC06
+        - MC07
+        - MC08
+        - MC09
+        - MC10
+        - MC11
+        - MC12
+        - MC13
+        - MC14
+        - MC15
+        - MC29
+        - MC30
+        - MC31
+        - MC55
+        - MC56
+        - MC58
+        - MC59
+        - MC60
+        - MC61
+        - MC62
+        - MC63
+        - MC64
+        - MC65
+        - MC66
+        - MC67
+        - MC68
+        - MC69
+        - MC70
+        - MC71
+        - MC72
+        - MC73
+        - MC74
+        - MC75
+        - MC76
+        - MC77
+        - MC78
+        - MC79
+        - MC80
+        - MCAR
+        - MCCP
+        - MCDG
+        - MCNR
+        - MCPJ
+        - MCPN
+        - MCPR
+        - MCRP
+        - MCRV
+        - MICR
+        - MILG
+        - MPR1
+        - MPU1
+        - MPZ1
+        - N180
+        - N360
+        - N540
+        - N541
+        - NRJS
+        - NRNS
+        - NRPJ
+        - NRPN
+        - OPCI
+        - PAZS
+        - PBCR
+        - PDEO
+        - PEND
+        - PNBC
+        - PREP
+        - PROP
+        - PROV
+        - PRVD
+        - RCM1
+        - RCM2
+        - RCM3
+        - RCN1
+        - RCN2
+        - REAC
+        - REAL
+        - REAM
+        - REBC
+        - REBL
+        - REBM
+        - RECC
+        - RECL
+        - RECM
+        - REDC
+        - REDL
+        - REDM
+        - REEC
+        - REEL
+        - REEM
+        - RMC1
+        - RMC2
+        - RMC3
+        - RMC4
+        - RNEG
+        - ROES
+        - RPCO
+        - RSEG
+        - RTAN
+        - SEGR
+        - SEGU
+        - SERV
+        - SG01
+        - SG02
+        - SG03
+        - SG04
+        - TCRS
+        - TMDJ
+        - TMDN
+        - TMOF
+        - TODR
+        - TREM
+        - TRNS
+        - V180
+        - V360
+        - V540
+        - V541
+        - VEHI
+        - VI23
+        - VI24
+        - VI25
+        - VI26
+        - VI27
+        - VI28
+        - VI32
+        - VI33
+        - VI34
+        - VI35
+        - VI36
+        - VI37
+        - VI38
+        - VI39
+        - VI40
+        - VI41
+        - VI42
+        - VI43
+        - VI44
+        - VI45
+        - VI46
+        - VI47
+        - VI48
+        - VI49
+        - VI50
+        - VI51
+        - VI52
+        - VI53
+        - VI54
+        - VI55
+        - VIVI
+        - X180
+        - XBOR
     TipoGarantiaEnum:
       type: string
       enum:
@@ -648,10 +1545,6 @@ components:
         - X
         - Y
         - Z
-    TipoTitularEnum:
-      type: string
-      enum:
-        - SINDATAMODELING
 
         #   ERRORES
     Error:
